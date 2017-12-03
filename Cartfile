@@ -1,0 +1,2 @@
+github "tadija/AEXML" ~> 4.2.2
+github "Alamofire/Alamofire" ~> 4.5

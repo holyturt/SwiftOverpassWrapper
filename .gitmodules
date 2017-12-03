@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/Alamofire"]
+	path = Carthage/Checkouts/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Carthage/Checkouts/AEXML"]
+	path = Carthage/Checkouts/AEXML
+	url = https://github.com/tadija/AEXML.git
