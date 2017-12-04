@@ -7,8 +7,8 @@ Let's say this is an Overpass XML collects nodes which have the key "name" that 
 ```xml
 <osm-script>
   <query type="node">
-    <has-kv k="name" v="Gielgen"/>
     <bbox-query e="7.25" n="50.8" s="50.7" w="7.1"/>
+    <has-kv k="name" v="Gielgen"/>
   </query>
   <print/>
 </osm-script>
@@ -45,7 +45,7 @@ let nodeQuery = SwiftOverpass.query(type: .node)
 nodeQuery.hasTag("name", equals: "Schloss Neuschwanstein")
 let relationQuery = nodeQuery.related(.relation)
 
-SwiftOverpass.api("http://overpass-api.de/api/interpreter")
+SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
   .fetch([nodeQuery, relationQuery]) { (response) in
     // do whatever you want
   }
