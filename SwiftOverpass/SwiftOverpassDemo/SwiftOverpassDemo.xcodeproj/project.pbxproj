@@ -12,7 +12,6 @@
 		38F2AEFD1FD3D0A700BC1D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F2AEFC1FD3D0A700BC1D27 /* Assets.xcassets */; };
 		38F2AF081FD3D0ED00BC1D27 /* SwiftOverpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AF071FD3D0ED00BC1D27 /* SwiftOverpass.framework */; };
 		38F2AF091FD3D0ED00BC1D27 /* SwiftOverpass.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AF071FD3D0ED00BC1D27 /* SwiftOverpass.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A027FD9EE646510BF251BD64 /* Pods_SwiftOverpassDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE3135D7BC175DA368DB602 /* Pods_SwiftOverpassDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,9 +35,6 @@
 		38F2AEFC1FD3D0A700BC1D27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F2AF011FD3D0A700BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F2AF071FD3D0ED00BC1D27 /* SwiftOverpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftOverpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CE3135D7BC175DA368DB602 /* Pods_SwiftOverpassDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftOverpassDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6E8937CBBACF90DDEF282E7 /* Pods-SwiftOverpassDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOverpassDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOverpassDemo/Pods-SwiftOverpassDemo.release.xcconfig"; sourceTree = "<group>"; };
-		E0CEB937A639A651163A2227 /* Pods-SwiftOverpassDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOverpassDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOverpassDemo/Pods-SwiftOverpassDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +43,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F2AF081FD3D0ED00BC1D27 /* SwiftOverpass.framework in Frameworks */,
-				A027FD9EE646510BF251BD64 /* Pods_SwiftOverpassDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +55,6 @@
 				38F2AF071FD3D0ED00BC1D27 /* SwiftOverpass.framework */,
 				38F2AEF41FD3D0A700BC1D27 /* SwiftOverpassDemo */,
 				38F2AEF31FD3D0A700BC1D27 /* Products */,
-				659C8537F89B6A2702F5DCD8 /* Pods */,
-				F68B9B843ED68DFC4315FE09 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,23 +77,6 @@
 			path = SwiftOverpassDemo;
 			sourceTree = "<group>";
 		};
-		659C8537F89B6A2702F5DCD8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E0CEB937A639A651163A2227 /* Pods-SwiftOverpassDemo.debug.xcconfig */,
-				B6E8937CBBACF90DDEF282E7 /* Pods-SwiftOverpassDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F68B9B843ED68DFC4315FE09 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5CE3135D7BC175DA368DB602 /* Pods_SwiftOverpassDemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,13 +84,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38F2AF041FD3D0A700BC1D27 /* Build configuration list for PBXNativeTarget "SwiftOverpassDemo" */;
 			buildPhases = (
-				A4348A631A20DA45A0EACE57 /* [CP] Check Pods Manifest.lock */,
 				38F2AEEE1FD3D0A700BC1D27 /* Sources */,
 				38F2AEEF1FD3D0A700BC1D27 /* Frameworks */,
 				38F2AEF01FD3D0A700BC1D27 /* Resources */,
 				38F2AF0A1FD3D0ED00BC1D27 /* Embed Frameworks */,
-				4E1597AB9E3BEE67CD053DAC /* [CP] Embed Pods Frameworks */,
-				173A9C2B2F1390713B965745 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,64 +142,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		173A9C2B2F1390713B965745 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOverpassDemo/Pods-SwiftOverpassDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E1597AB9E3BEE67CD053DAC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOverpassDemo/Pods-SwiftOverpassDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOverpass/SwiftOverpass.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverpass.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOverpassDemo/Pods-SwiftOverpassDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4348A631A20DA45A0EACE57 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftOverpassDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38F2AEEE1FD3D0A700BC1D27 /* Sources */ = {
@@ -350,7 +265,6 @@
 		};
 		38F2AF051FD3D0A700BC1D27 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0CEB937A639A651163A2227 /* Pods-SwiftOverpassDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,7 +280,6 @@
 		};
 		38F2AF061FD3D0A700BC1D27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6E8937CBBACF90DDEF282E7 /* Pods-SwiftOverpassDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
