@@ -51,6 +51,17 @@ SwiftOverpass.api("http://overpass-api.de/api/interpreter")
   }
 ```
 
+## Installation
+CocoaPods:
+```
+pod 'SwiftOverpass'
+```
+
+Carthage:
+```
+github "holyturt/SwiftOverpassWrapper"
+```
+
 ---
 
 ### License
