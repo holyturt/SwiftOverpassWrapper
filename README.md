@@ -3,7 +3,7 @@
 This library aims to make a query for the Overpass API easily in Swift.
 
 ## Usage
-Let's say this is a Overpass XML collects nodes which have the key "name" that equals the value "Gielgen":
+Let's say this is an Overpass XML collects nodes which have the key "name" that equals the value "Gielgen":
 ```xml
 <osm-script>
   <query type="node">
