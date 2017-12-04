@@ -22,9 +22,9 @@ query.setBoudingBox(s: 50.7, n: 50.8, w: 7.1, e: 7.25)
 query.hasTag("name", equals: "Gielgen")
 
 SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
-	.fetch(query) { (response) in
-		// do whatever you want
-	}
+  .fetch(query) { (response) in
+    // do whatever you want
+  }
 ```
 
 ## Example
@@ -46,7 +46,7 @@ nodeQuery.hasTag("name", equals: "Schloss Neuschwanstein")
 let relationQuery = nodeQuery.related(.relation)
 
 SwiftOverpass.api("http://overpass-api.de/api/interpreter")
-	.fetch([nodeQuery, relationQuery]) { (response) in
+  .fetch([nodeQuery, relationQuery]) { (response) in
     // do whatever you want
   }
 ```
