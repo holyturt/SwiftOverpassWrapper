@@ -1,4 +1,4 @@
-# SwiftOverpassWrapper
+# SwiftOverpass
 
 This library aims to make a query for the Overpass API easily in Swift.
 
