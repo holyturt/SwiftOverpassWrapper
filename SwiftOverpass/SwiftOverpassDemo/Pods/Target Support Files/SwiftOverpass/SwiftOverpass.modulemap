@@ -1,0 +1,6 @@
+framework module SwiftOverpass {
+  umbrella header "SwiftOverpass-umbrella.h"
+
+  export *
+  module * { export * }
+}
