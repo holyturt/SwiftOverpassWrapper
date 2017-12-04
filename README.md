@@ -1,13 +1,13 @@
 # SwiftOverpassWrapper
 
-This library aims to make queries for the Overpass API easily in Swift.
+This library aims to make a query for the Overpass API easily in Swift.
 
 ## Usage
 Let's say this is a Overpass XML collects nodes which have the key "name" that equals the value "Gielgen":
 ```xml
 <osm-script>
   <query type="node">
-    <has-kv k="name" regv="holtorf"/>
+    <has-kv k="name" v="Gielgen"/>
     <bbox-query e="7.25" n="50.8" s="50.7" w="7.1"/>
   </query>
   <print/>
@@ -47,8 +47,8 @@ let relationQuery = nodeQuery.related(.relation)
 
 SwiftOverpass.api("http://overpass-api.de/api/interpreter")
 	.fetch([nodeQuery, relationQuery]) { (response) in
-    	// do whatever you want
-    }
+    // do whatever you want
+  }
 ```
 
 ---
