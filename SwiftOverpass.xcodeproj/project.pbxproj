@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EEFF31FE0091E008AAB56 /* UpQuery.swift */; };
 		38F2AE431FD3B15E00BC1D27 /* SwiftOverpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */; };
 		38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */; };
 		38F2AE4A1FD3B15E00BC1D27 /* SwiftOverpass.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOverpassDemo.xcodeproj; path = SwiftOverpassDemo/SwiftOverpassDemo.xcodeproj; sourceTree = "<group>"; };
+		387EEFF31FE0091E008AAB56 /* UpQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpQuery.swift; sourceTree = "<group>"; };
 		38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOverpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOverpass.h; sourceTree = "<group>"; };
 		38F2AE3D1FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				38F2AEAB1FD3CF1300BC1D27 /* NodeQuery.swift */,
 				38F2AEAD1FD3CF2800BC1D27 /* WayQuery.swift */,
 				38F2AEAF1FD3CF3E00BC1D27 /* RelationQuery.swift */,
+				387EEFF31FE0091E008AAB56 /* UpQuery.swift */,
 				38F2AF111FD41A2800BC1D27 /* DownQuery.swift */,
 				38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */,
 				38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */,
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */,
 				38F2AEA31FD3CD6100BC1D27 /* SwiftOverpass.swift in Sources */,
 				38F2AEA71FD3CDAA00BC1D27 /* BoudingBox.swift in Sources */,
 				38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */,

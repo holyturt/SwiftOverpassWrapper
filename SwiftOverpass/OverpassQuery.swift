@@ -19,15 +19,15 @@ public enum OverpassQueryType {
     /// Specifies the query is relation
     relation,
     /// Specifies the query is down
-    down
-    
+    down,
+    /// Specifies the query is up
+    up
+
     // TODO: Implement another query types.
     //    /// Specifies the query is backwards
     //    backwards,
     //    /// Specifies the query is down-rel
     //    downRel,
-    //    /// Specifies the query is up
-    //    up,
     //    /// Specifies the query is up-rel
     //    upRel
     
@@ -40,10 +40,10 @@ public enum OverpassQueryType {
         node: "node",
         way: "way",
         relation: "relation",
-        down: "down"
+        down: "down",
+        up: "up"
         //        backwards: "backwords",
         //        downRel: "down-rel",
-        //        up: "up",
         //        upRel: "up-rel"
     ]
 }
@@ -86,11 +86,11 @@ extension OverpassQuery {
             return RelationQuery(parent: self)
         case .down:
             return DownQuery(parent: self)
+        case .up:
+            return UpQuery(parent: self)
             //        case .backwards:
             //            <#code#>
             //        case .downRel:
-            //            <#code#>
-            //        case .up:
             //            <#code#>
             //        case .upRel:
             //            <#code#>

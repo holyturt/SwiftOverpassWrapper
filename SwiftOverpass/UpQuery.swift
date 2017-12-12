@@ -1,8 +1,8 @@
 //
-//  DownQuery.swift
+//  UpQuery.swift
 //  SwiftOverpass
 //
-//  Created by Sho Kamei on 2017/12/03.
+//  Created by Sho Kamei on 2017/12/12.
 //  Copyright © 2017年 Sho Kamei. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import Foundation
 import AEXML
 
 /**
- Class for creating <recurse type="down"> element
+ Class for creating <recurse type="up"> element
  */
-public class DownQuery: OverpassQuery {
+public class UpQuery: OverpassQuery {
     
     // MARK: - Properties
     
     /// The type of the query
-    public fileprivate(set) var type: OverpassQueryType = .down
+    public fileprivate(set) var type: OverpassQueryType = .up
     /// The parent query of the query
     public fileprivate(set) weak var parent: OverpassQuery?
     /// List of tag. Defaults to empty
@@ -28,7 +28,7 @@ public class DownQuery: OverpassQuery {
     // MARK: - Initializers
     
     /**
-     Creates a `DownQuery`
+     Creates a `UpQuery`
      */
     internal init(parent: OverpassQuery? = nil) {
         self.parent = parent
@@ -40,7 +40,6 @@ public class DownQuery: OverpassQuery {
      Makes a <recurse> element as `AEXMLElement`
      */
     public func makeRecurseElement() -> AEXMLElement {
-        
         // TODO: throw an error. this function shouldn't be called.
         
         var typeValue: String!
