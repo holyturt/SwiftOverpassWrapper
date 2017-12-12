@@ -47,13 +47,13 @@ public struct BoudingBox {
         let center: CLLocationCoordinate2D = mapView.region.center
         
         // This is the farthest Lat point to the left
-        w = center.latitude - span.latitudeDelta * 0.5
+        s = center.latitude - span.latitudeDelta * 0.5
         // This is the farthest Lat point to the Right
-        e = center.latitude + span.latitudeDelta * 0.5
+        n = center.latitude + span.latitudeDelta * 0.5
         // This is the farthest Long point in the Upward direction
-        n = center.longitude - span.longitudeDelta * 0.5
+        w = center.longitude - span.longitudeDelta * 0.5
         // This is the farthest Long point in the Downward direction
-        s = center.longitude + span.longitudeDelta * 0.5
+        e = center.longitude + span.longitudeDelta * 0.5
     }
     
     internal func makeBboxQueryElement() -> AEXMLElement {
