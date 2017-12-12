@@ -27,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		387EEFF11FE00869008AAB56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 38F2AEF21FD3D0A700BC1D27;
+			remoteInfo = SwiftOverpassDemo;
+		};
 		38F2AE441FD3B15E00BC1D27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38F2AE301FD3B15E00BC1D27 /* Project object */;
@@ -37,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOverpassDemo.xcodeproj; path = SwiftOverpassDemo/SwiftOverpassDemo.xcodeproj; sourceTree = "<group>"; };
 		38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOverpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOverpass.h; sourceTree = "<group>"; };
 		38F2AE3D1FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		387EEFEE1FE00869008AAB56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				387EEFF21FE00869008AAB56 /* SwiftOverpassDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		38F2AE2F1FD3B15E00BC1D27 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		38F2AE531FD3B40300BC1D27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */,
 				38F2AEAA1FD3CEC700BC1D27 /* XCTest.framework */,
 				38F2AE571FD3B40C00BC1D27 /* Alamofire.framework */,
 				38F2AE551FD3B40300BC1D27 /* AEXML.framework */,
@@ -221,6 +238,12 @@
 			mainGroup = 38F2AE2F1FD3B15E00BC1D27;
 			productRefGroup = 38F2AE3A1FD3B15E00BC1D27 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 387EEFEE1FE00869008AAB56 /* Products */;
+					ProjectRef = 387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				38F2AE381FD3B15E00BC1D27 /* SwiftOverpass */,
@@ -228,6 +251,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		387EEFF21FE00869008AAB56 /* SwiftOverpassDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SwiftOverpassDemo.app;
+			remoteRef = 387EEFF11FE00869008AAB56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		38F2AE371FD3B15E00BC1D27 /* Resources */ = {

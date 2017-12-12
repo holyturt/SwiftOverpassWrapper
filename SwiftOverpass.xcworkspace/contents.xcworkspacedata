@@ -8,7 +8,7 @@
       location = "group:Carthage/Checkouts/Alamofire/Alamofire.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftOverpass/SwiftOverpassDemo/SwiftOverpassDemo.xcodeproj">
+      location = "group:SwiftOverpassDemo/SwiftOverpassDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:SwiftOverpass.xcodeproj">
