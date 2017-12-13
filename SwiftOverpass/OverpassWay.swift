@@ -40,10 +40,17 @@ public final class OverpassWay {
     */
     public func loadRelatedNodes() -> [OverpassNode]? {
         if let response = response, let nodes = response.nodes, let ids = nodeIds {
-            let filtered = nodes.filter { ids.contains($0.id) }
             
+            var filtered = [OverpassNode]()
+            ids.forEach { id in
+                if let index = nodes.index(where: { $0.id == id }) {
+                    filtered.append(nodes[index])
+                    return
+                }
+            }
+
             // Returns if it has some nodes.
-            if filtered.count != 0 {
+            if filtered.count > 0 {
                 return filtered
             }
         }

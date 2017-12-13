@@ -51,10 +51,17 @@ public final class OverpassRelation {
         if let response = response, let allNodes = response.nodes, let members = members {
             let nodeIds = members.filter { $0.type == .node }
                 .map { $0.id }
-            let filtered = allNodes.filter { nodeIds.contains($0.id) }
+            
+            var filtered = [OverpassNode]()
+            nodeIds.forEach { id in
+                if let index = allNodes.index(where: { $0.id == id }) {
+                    filtered.append(allNodes[index])
+                    return
+                }
+            }
             
             // Returns if it has some nodes.
-            if filtered.count != 0 {
+            if filtered.count > 0 {
                 return filtered
             }
         }
@@ -69,10 +76,17 @@ public final class OverpassRelation {
         if let response = response, let allWays = response.ways, let members = members {
             let wayIds = members.filter { $0.type == .way }
                 .map { $0.id }
-            let filtered = allWays.filter { wayIds.contains($0.id) }
+            
+            var filtered = [OverpassWay]()
+            wayIds.forEach { id in
+                if let index = allWays.index(where: { $0.id == id }) {
+                    filtered.append(allWays[index])
+                    return
+                }
+            }
             
             // Returns if it has some nodes.
-            if filtered.count != 0 {
+            if filtered.count > 0 {
                 return filtered
             }
         }
@@ -87,10 +101,17 @@ public final class OverpassRelation {
         if let response = response, let allRels = response.relations, let members = members {
             let relIds = members.filter { $0.type == .relation }
                 .map { $0.id }
-            let filtered = allRels.filter { relIds.contains($0.id) }
+            
+            var filtered = [OverpassRelation]()
+            relIds.forEach { id in
+                if let index = allRels.index(where: { $0.id == id }) {
+                    filtered.append(allRels[index])
+                    return
+                }
+            }
             
             // Returns if it has some nodes.
-            if filtered.count != 0 {
+            if filtered.count > 0 {
                 return filtered
             }
         }

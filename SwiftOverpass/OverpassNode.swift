@@ -72,7 +72,7 @@ public final class OverpassNode {
             }
             
             // Returns if it has some nodes.
-            if filtered.count != 0 {
+            if filtered.count > 0 {
                 return filtered
             }
         }
