@@ -28,7 +28,7 @@ SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
 ```
 
 ## Example
-Overpass Xml:
+Overpass XML:
 ```xml
 <union>
   <query type="node">
