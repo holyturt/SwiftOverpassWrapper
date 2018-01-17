@@ -17,7 +17,7 @@ public class DownQuery: OverpassQuery {
     // MARK: - Properties
     
     /// The type of the query
-    public fileprivate(set) var type: OverpassQueryType = .down
+    public let type: OverpassQueryType = .down
     /// The parent query of the query
     public fileprivate(set) weak var parent: OverpassQuery?
     /// List of tag. Defaults to empty

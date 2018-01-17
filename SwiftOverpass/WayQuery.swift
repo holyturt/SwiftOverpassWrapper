@@ -17,7 +17,7 @@ public final class WayQuery: OverpassQuery {
     // MARK: - Properties
     
     /// The type of the query
-    public fileprivate(set) var type: OverpassQueryType = .way
+    public let type: OverpassQueryType = .way
     /// The parent query of the query
     public fileprivate(set) weak var parent: OverpassQuery?
     /// List of tag. Defaults to empty

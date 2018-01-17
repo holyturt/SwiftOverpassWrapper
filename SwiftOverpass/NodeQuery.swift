@@ -17,7 +17,7 @@ public final class NodeQuery: OverpassQuery {
     // MARK: - Properties
     
     /// The type of the query
-    public fileprivate(set) var type: OverpassQueryType = .node
+    public let type: OverpassQueryType = .node
     /// The parent query of the query
     public fileprivate(set) weak var parent: OverpassQuery?
     /// List of tag. Defaults to empty

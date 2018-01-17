@@ -17,7 +17,7 @@ public class RelationQuery: OverpassQuery {
     // MARK: - Properties
     
     /// The type of the query
-    public fileprivate(set) var type: OverpassQueryType = .relation
+    public let type: OverpassQueryType = .relation
     /// The parent query of the query
     public fileprivate(set) weak var parent: OverpassQuery?
     /// List of tag. Defaults to empty
