@@ -179,6 +179,10 @@ extension OverpassQuery {
         tags[key] = OverpassTag(key: key, value: value, isNegation: true)
     }
     
+    public func doesNotHaveTag(_ key: String) {
+        tags[key] = OverpassTag(key: key, value: ".", isNegation: true, isRegex: true)
+    }
+    
     /**
      Sets a tag to the query as regex tag
      
