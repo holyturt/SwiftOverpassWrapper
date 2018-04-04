@@ -31,7 +31,7 @@ public struct OverpassTag {
         self.key = key
         self.value = value
         self.isNegation = isNegation
-        self.isRegex = false
+        self.isRegex = isRegex
     }
     
     // MARK: - Internal Functions
