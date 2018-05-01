@@ -180,6 +180,15 @@ extension OverpassQuery {
     }
     
     /**
+     Marks a tag as not being supposed to contain an arbitary value.
+     
+     - parameter key: A key of the <has-kv> element
+     */
+    public func doesNotHaveTag(_ key: String) {
+        tags[key] = OverpassTag(key: key, value: ".", isNegation: true, isRegex: true)
+    }
+    
+    /**
      Sets a tag to the query as regex tag
      
      - parameter key: A key of the <has-kv> element
