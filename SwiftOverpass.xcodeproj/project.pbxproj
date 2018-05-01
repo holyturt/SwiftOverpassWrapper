@@ -25,6 +25,7 @@
 		38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */; };
 		38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF111FD41A2800BC1D27 /* DownQuery.swift */; };
 		38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */; };
+		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassWay.swift; sourceTree = "<group>"; };
 		38F2AF111FD41A2800BC1D27 /* DownQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownQuery.swift; sourceTree = "<group>"; };
 		38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
+		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		38F2AE461FD3B15E00BC1D27 /* SwiftOverpassTests */ = {
 			isa = PBXGroup;
 			children = (
+				64570075207552870061A81D /* Models */,
 				38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */,
 				38F2AE491FD3B15E00BC1D27 /* Info.plist */,
 			);
@@ -158,6 +161,14 @@
 				38F2AE551FD3B40300BC1D27 /* AEXML.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64570075207552870061A81D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64570077207552AA0061A81D /* OverpassTagTestCase.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */,
+				64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
