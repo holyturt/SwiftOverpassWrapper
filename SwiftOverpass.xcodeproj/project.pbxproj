@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EEFF31FE0091E008AAB56 /* UpQuery.swift */; };
 		38F2AE431FD3B15E00BC1D27 /* SwiftOverpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */; };
-		38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */; };
 		38F2AE4A1FD3B15E00BC1D27 /* SwiftOverpass.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F2AE541FD3B40300BC1D27 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE551FD3B40300BC1D27 /* AEXML.framework */; };
 		38F2AE561FD3B40C00BC1D27 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE571FD3B40C00BC1D27 /* Alamofire.framework */; };
@@ -52,7 +51,6 @@
 		38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOverpass.h; sourceTree = "<group>"; };
 		38F2AE3D1FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F2AE421FD3B15E00BC1D27 /* SwiftOverpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOverpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOverpassTests.swift; sourceTree = "<group>"; };
 		38F2AE491FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F2AE551FD3B40300BC1D27 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2AE571FD3B40C00BC1D27 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				64570075207552870061A81D /* Models */,
-				38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */,
 				38F2AE491FD3B15E00BC1D27 /* Info.plist */,
 			);
 			path = SwiftOverpassTests;
@@ -318,7 +315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */,
 				64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
