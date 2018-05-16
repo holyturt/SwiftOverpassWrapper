@@ -25,6 +25,7 @@
 		38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF111FD41A2800BC1D27 /* DownQuery.swift */; };
 		38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */; };
 		643DB70B20ACD986001A7B95 /* OverpassEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70A20ACD986001A7B95 /* OverpassEntity.swift */; };
+		643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */; };
 		6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6441AC4D209A6DAF00B03F3E /* SingleNode.xml */; };
 		6441AC54209A700B00B03F3E /* OverpassNode+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */; };
 		6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */; };
@@ -72,6 +73,7 @@
 		38F2AF111FD41A2800BC1D27 /* DownQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownQuery.swift; sourceTree = "<group>"; };
 		38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
 		643DB70A20ACD986001A7B95 /* OverpassEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassEntity.swift; sourceTree = "<group>"; };
+		643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassEntity+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6441AC4D209A6DAF00B03F3E /* SingleNode.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNode.xml; sourceTree = "<group>"; };
 		6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassNode+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */,
+				643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */,
 				38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */,
 				38F2AEB01FD3CF3E00BC1D27 /* RelationQuery.swift in Sources */,
+				643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */,
 				38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */,
 				38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */,
 				643DB70B20ACD986001A7B95 /* OverpassEntity.swift in Sources */,

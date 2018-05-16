@@ -47,14 +47,14 @@ public final class OverpassResponse {
             // Parses xml to create `OverpassWay`
             if let ways = xmlDoc.root["way"].all {
                 self.ways = ways.map {
-                    let id = $0.attributes["id"]!
+                    let id = OverpassEntity.parseEntityId(from: $0)!
                     
                     var nodeIds: [String]?
                     if let nodes = $0["nd"].all {
                         nodeIds = nodes.map { $0.attributes["ref"]! }
                     }
                     
-                    let tags = getTags($0)
+                    let tags = OverpassEntity.parseTags(from: $0)
                     
                     return OverpassWay(id: id, nodeIds: nodeIds, tags: tags, response: self)
                 }
@@ -63,7 +63,7 @@ public final class OverpassResponse {
             // Parses xml to create `OverpassRelation`
             if let rels = xmlDoc.root["relation"].all {
                 self.relations = rels.map {
-                    let id = $0.attributes["id"]!
+                    let id = OverpassEntity.parseEntityId(from: $0)!
                     
                     var relMembers: [OverpassRelation.Member]?
                     if let members = $0["member"].all {
@@ -82,7 +82,7 @@ public final class OverpassResponse {
                         }
                     }
                     
-                    let tags = getTags($0)
+                    let tags = OverpassEntity.parseTags(from: $0)
                     
                     return OverpassRelation(id: id, members: relMembers, tags: tags, response: self)
                 }
@@ -90,19 +90,5 @@ public final class OverpassResponse {
         } catch {
             print("\(error)")
         }
-    }
-    
-    // MARK: - Private
-    
-    private func getTags(_ element: AEXMLElement) -> [String : String] {
-        var tags = [String : String]()
-        if let tagElems = element["tag"].all {
-            tagElems.forEach {
-                if let k = $0.attributes["k"], let v = $0.attributes["v"] {
-                    tags[k] = v
-                }
-            }
-        }
-        return tags
     }
 }

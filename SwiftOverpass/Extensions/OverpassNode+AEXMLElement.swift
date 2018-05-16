@@ -12,9 +12,14 @@ import AEXML
 
 extension OverpassNode {
     
+    /// Attempts to create an Overpass node from the given XML element.
+    ///
+    /// - Parameters:
+    ///   - xmlElement: The XML element to create the node from.
+    ///   - response: Overpass response object that can be used to lookup related features.
     convenience init?(xmlElement: AEXMLElement, response: OverpassResponse) {
         guard
-            let id = xmlElement.attributes["id"],
+            let id = OverpassEntity.parseEntityId(from: xmlElement),
             let latitudeAsString = xmlElement.attributes["lat"],
             let latitude = Double(latitudeAsString),
             let longitudeAsString = xmlElement.attributes["lon"],
@@ -23,26 +28,13 @@ extension OverpassNode {
             return nil
         }
         
-        let tags = OverpassNode.parseTags(from: xmlElement)
+        let tags = OverpassEntity.parseTags(from: xmlElement)
         
         self.init(id: id,
                   lat: latitude,
                   lon: longitude,
                   tags: tags,
                   response: response)
-    }
-    
-    static private func parseTags(from nodeXMLElement: AEXMLElement) -> [String: String] {
-        var tags = [String : String]()
-        
-        if let tagElems = nodeXMLElement["tag"].all {
-            tagElems.forEach {
-                if let k = $0.attributes["k"], let v = $0.attributes["v"] {
-                    tags[k] = v
-                }
-            }
-        }
-        return tags
     }
     
 }
