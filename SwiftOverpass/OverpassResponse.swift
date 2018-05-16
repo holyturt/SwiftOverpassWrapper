@@ -46,17 +46,8 @@ public final class OverpassResponse {
             
             // Parses xml to create `OverpassWay`
             if let ways = xmlDoc.root["way"].all {
-                self.ways = ways.map {
-                    let id = OverpassEntity.parseEntityId(from: $0)!
-                    
-                    var nodeIds: [String]?
-                    if let nodes = $0["nd"].all {
-                        nodeIds = nodes.map { $0.attributes["ref"]! }
-                    }
-                    
-                    let tags = OverpassEntity.parseTags(from: $0)
-                    
-                    return OverpassWay(id: id, nodeIds: nodeIds, tags: tags, response: self)
+                self.ways = ways.compactMap { wayXMLElement in
+                    return OverpassWay(xmlElement: wayXMLElement, response: self)
                 }
             }
             
