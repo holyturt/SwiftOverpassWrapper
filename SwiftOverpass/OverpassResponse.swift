@@ -39,14 +39,8 @@ public final class OverpassResponse {
             
             // Parses xml to create `OverpassNode`
             if let nodes = xmlDoc.root["node"].all {
-                self.nodes = nodes.map {
-                    let id = $0.attributes["id"]!
-                    let lat = Double($0.attributes["lat"]!)!
-                    let lon = Double($0.attributes["lon"]!)!
-                    
-                    let tags = getTags($0)
-                    
-                    return OverpassNode(id: id, lat: lat, lon: lon, tags: tags, response: self)
+                self.nodes = nodes.compactMap { nodeXMLElement in
+                    return OverpassNode(xmlElement: nodeXMLElement, response: self)
                 }
             }
             
