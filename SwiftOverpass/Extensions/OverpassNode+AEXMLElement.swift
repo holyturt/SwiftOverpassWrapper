@@ -18,8 +18,14 @@ extension OverpassNode {
     ///   - xmlElement: The XML element to create the node from.
     ///   - response: Overpass response object that can be used to lookup related features.
     convenience init?(xmlElement: AEXMLElement, response: OverpassResponse) {
+        
+        // Basic entity properties
+        guard let id = OverpassEntity.parseEntityId(from: xmlElement) else {
+            return nil
+        }
+        let tags = OverpassEntity.parseTags(from: xmlElement)
+        
         guard
-            let id = OverpassEntity.parseEntityId(from: xmlElement),
             let latitudeAsString = xmlElement.attributes["lat"],
             let latitude = Double(latitudeAsString),
             let longitudeAsString = xmlElement.attributes["lon"],
@@ -27,8 +33,6 @@ extension OverpassNode {
         else {
             return nil
         }
-        
-        let tags = OverpassEntity.parseTags(from: xmlElement)
         
         self.init(id: id,
                   lat: latitude,
