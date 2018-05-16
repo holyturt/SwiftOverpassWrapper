@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class OverpassRelation {
+public final class OverpassRelation: OverpassEntity {
     
     // MARK: - Constants
     
@@ -23,12 +23,8 @@ public final class OverpassRelation {
     
     /// The response which made the relation
     public fileprivate(set) weak var response: OverpassResponse?
-    /// The id of the way
-    public let id: String
     /// List of member the relation has
     public let members: [Member]?
-    /// List of tag the node has
-    public let tags: [String : String]
     
     // MARK: - Initializers
     
@@ -36,10 +32,10 @@ public final class OverpassRelation {
      Creates a `OverpassRelation`
     */
     internal init(id: String, members: [Member]?, tags: [String : String], response: OverpassResponse) {
-        self.id = id
         self.members = members
-        self.tags = tags
         self.response = response
+        
+        super.init(id: id, tags: tags)
     }
     
     // MARK: - Public
