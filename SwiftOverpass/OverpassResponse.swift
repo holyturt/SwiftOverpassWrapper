@@ -53,29 +53,8 @@ public final class OverpassResponse {
             
             // Parses xml to create `OverpassRelation`
             if let rels = xmlDoc.root["relation"].all {
-                self.relations = rels.map {
-                    let id = OverpassEntity.parseEntityId(from: $0)!
-                    
-                    var relMembers: [OverpassRelation.Member]?
-                    if let members = $0["member"].all {
-                        relMembers = members.map {
-                            var type: OverpassQueryType!
-                            switch $0.attributes["type"]! {
-                            case "node": type = .node
-                            case "way": type = .way
-                            case "relation": type = .relation
-                            default: break // TODO: shouldn't be reach here, throw error
-                            }
-                            
-                            let ref = $0.attributes["ref"]!
-                            let role = $0.attributes["role"]
-                            return OverpassRelation.Member(type: type, id: ref, role: role)
-                        }
-                    }
-                    
-                    let tags = OverpassEntity.parseTags(from: $0)
-                    
-                    return OverpassRelation(id: id, members: relMembers, tags: tags, response: self)
+                self.relations = rels.compactMap { relationXMLElement in
+                    return OverpassRelation(xmlElement: relationXMLElement, response: self)
                 }
             }
         } catch {
