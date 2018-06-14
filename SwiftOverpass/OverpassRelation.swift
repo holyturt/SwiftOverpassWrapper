@@ -13,7 +13,7 @@ public final class OverpassRelation: OverpassEntity {
     // MARK: - Constants
     
     /// Represents a <member> element
-    public struct Member {
+    public struct Member: Equatable {
         let type: OverpassQueryType
         let id: String
         let role: String?
