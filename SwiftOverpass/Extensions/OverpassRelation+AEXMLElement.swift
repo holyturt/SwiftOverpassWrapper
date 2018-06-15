@@ -25,7 +25,7 @@ extension OverpassRelation {
         }
         let tags = OverpassEntity.parseTags(from: xmlElement)
         
-        let members: [OverpassRelation.Member]?
+        let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {
             members = memberXMLElements.map {
                 var type: OverpassQueryType!
@@ -41,7 +41,7 @@ extension OverpassRelation {
                 return OverpassRelation.Member(type: type, id: ref, role: role)
             }
         } else {
-            members = nil
+            members = []
         }
         
         self.init(id: id, members: members, tags: tags, response: response)
