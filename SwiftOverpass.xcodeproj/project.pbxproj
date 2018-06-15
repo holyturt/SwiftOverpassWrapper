@@ -37,6 +37,7 @@
 		6441AC54209A700B00B03F3E /* OverpassNode+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */; };
 		6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */; };
 		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
+		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassNode+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
 		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
+		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		6441AC4B209A6D8B00B03F3E /* XML */ = {
 			isa = PBXGroup;
 			children = (
+				6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */,
 				6441AC4D209A6DAF00B03F3E /* SingleNode.xml */,
 				6408D77620D3184100829A3A /* SingleRelation.xml */,
 				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
@@ -356,6 +359,7 @@
 				6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */,
 				6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */,
 				643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */,
+				6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

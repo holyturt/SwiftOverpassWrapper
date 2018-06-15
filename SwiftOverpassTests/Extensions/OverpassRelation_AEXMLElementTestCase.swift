@@ -37,6 +37,19 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
         
     }
     
+    func testInitWithXMLElementThatContainsASingleRelationWithMemberOfUnexpectedTypeShouldContinueParsing() {
+        guard let relation = singleRelationFromXMLFile("SingleRelationWithMemberOfUnexpectedType") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        // The file contains two types, but the first of them has a bogus type that the parser
+        // will not be able to recognize. It should just skip that member and continue parsing,
+        // resulting in one member.
+        let way = OverpassRelation.Member(type: .way, id: "142678633", role: "outer")
+        XCTAssertEqual(relation.members, [way])
+    }
+    
     // MARK: Helper
     
     private func singleRelationFromXMLFile(_ name: String) -> OverpassRelation? {

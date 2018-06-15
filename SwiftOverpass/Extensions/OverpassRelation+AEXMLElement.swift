@@ -27,13 +27,13 @@ extension OverpassRelation {
         
         let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {
-            members = memberXMLElements.map {
+            members = memberXMLElements.compactMap {
                 var type: OverpassQueryType!
                 switch $0.attributes["type"]! {
                 case "node": type = .node
                 case "way": type = .way
                 case "relation": type = .relation
-                default: break // TODO: shouldn't be reach here, throw error
+                default: return nil
                 }
                 
                 let ref = $0.attributes["ref"]!
