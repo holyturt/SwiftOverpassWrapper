@@ -50,6 +50,15 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
         XCTAssertEqual(relation.members, [way])
     }
     
+    func testInitWithXMLElementShouldIgnoreMembersThatAreMissingTheirID() {
+        guard let relation = singleRelationFromXMLFile("SingleRelationWithMemberThatIsMissingItsID") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        XCTAssertTrue(relation.members?.isEmpty ?? true)
+    }
+    
     // MARK: Helper
     
     private func singleRelationFromXMLFile(_ name: String) -> OverpassRelation? {

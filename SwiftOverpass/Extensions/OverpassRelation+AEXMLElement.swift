@@ -42,9 +42,13 @@ extension OverpassRelation {
                     return nil
                 }
                 
-                let ref = $0.attributes["ref"]!
+                guard let id = $0.attributes["ref"] else {
+                    // Members must have an ID.
+                    return nil
+                }
+                
                 let role = $0.attributes["role"]
-                return OverpassRelation.Member(type: type, id: ref, role: role)
+                return OverpassRelation.Member(type: type, id: id, role: role)
             }
         } else {
             members = []

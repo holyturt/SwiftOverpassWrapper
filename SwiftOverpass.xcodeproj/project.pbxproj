@@ -38,6 +38,7 @@
 		6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */; };
 		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
 		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
+		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
 		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
 		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
+		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */,
+				6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */,
 				6441AC4D209A6DAF00B03F3E /* SingleNode.xml */,
 				6408D77620D3184100829A3A /* SingleRelation.xml */,
 				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
@@ -359,6 +362,7 @@
 				6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */,
 				6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */,
 				643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */,
+				6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */,
 				6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,7 @@
+<relation id="2674373">
+    <!-- This member is missing the `ref` attribute. -->
+    <member type="way" role="outer"/>
+    <tag k="addr:city" v="Hamburg"/>
+    <tag k="addr:housenumber" v="16"/>
+    <tag k="addr:street" v="Mönckebergstraße"/>
+</relation>
