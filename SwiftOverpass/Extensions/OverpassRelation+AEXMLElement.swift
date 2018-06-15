@@ -25,9 +25,9 @@ extension OverpassRelation {
         }
         let tags = OverpassEntity.parseTags(from: xmlElement)
         
-        var relMembers: [OverpassRelation.Member]?
-        if let members = xmlElement["member"].all {
-            relMembers = members.map {
+        var members: [OverpassRelation.Member]?
+        if let memberXMLElements = xmlElement["member"].all {
+            members = memberXMLElements.map {
                 var type: OverpassQueryType!
                 switch $0.attributes["type"]! {
                 case "node": type = .node
@@ -42,7 +42,7 @@ extension OverpassRelation {
             }
         }
         
-        self.init(id: id, members: relMembers, tags: tags, response: response)
+        self.init(id: id, members: members, tags: tags, response: response)
     }
     
 }
