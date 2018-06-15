@@ -27,13 +27,19 @@ extension OverpassRelation {
         
         let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {
+            
+            // A mapping of the XML attribute "type" to the cases of `OverpassQueryType`
+            let typeAttributeToTypeEnum: [String: OverpassQueryType] = ["node": .node,
+                                                                        "way": .way,
+                                                                        "relation": .relation]
+            
             members = memberXMLElements.compactMap {
-                var type: OverpassQueryType!
-                switch $0.attributes["type"]! {
-                case "node": type = .node
-                case "way": type = .way
-                case "relation": type = .relation
-                default: return nil
+                guard
+                    let typeAttribute = $0.attributes["type"],
+                    let type = typeAttributeToTypeEnum[typeAttribute]
+                else {
+                    // The member is of an unexpected type; ignore it.
+                    return nil
                 }
                 
                 let ref = $0.attributes["ref"]!
