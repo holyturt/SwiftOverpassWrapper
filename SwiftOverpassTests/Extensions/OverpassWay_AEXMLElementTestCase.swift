@@ -27,6 +27,24 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
         XCTAssertEqual(way.nodeIds, expectedNodeIds)
     }
     
+    func testInitWithSingleWayWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
+        guard let way = singleWayFromXMLFile("SingleWayWithMetaProperties") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        guard let meta = way.meta else {
+            XCTFail("The meta information should've been parsed.")
+            return
+        }
+        
+        XCTAssertEqual(meta.version, 4)
+        XCTAssertEqual(meta.changesetId, 42)
+        XCTAssertEqual(meta.timestamp, "2012-11-30T09:52:43Z")
+        XCTAssertEqual(meta.userId, 1337)
+        XCTAssertEqual(meta.username, "john.doe")
+    }
+    
     // MARK: Helper
     
     private func singleWayFromXMLFile(_ name: String) -> OverpassWay? {

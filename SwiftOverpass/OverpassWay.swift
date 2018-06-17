@@ -22,11 +22,11 @@ public final class OverpassWay: OverpassEntity {
     /**
      Creates a `OverpassWay`
     */
-    internal init(id: String, nodeIds: [String]?, tags: [String : String], response: OverpassResponse) {
+    internal init(id: String, nodeIds: [String]?, tags: [String : String], meta: Meta?, response: OverpassResponse) {
         self.nodeIds = nodeIds
         self.response = response
         
-        super.init(id: id, tags: tags)
+        super.init(id: id, tags: tags, meta: meta)
     }
     
     // MARK: - Public
