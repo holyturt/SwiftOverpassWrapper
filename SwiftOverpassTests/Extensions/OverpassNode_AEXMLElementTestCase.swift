@@ -15,15 +15,7 @@ import Alamofire
 class OverpassNode_AEXMLElementTestCase: XCTestCase {
     
     func testInitWithXMLElementShouldParseSingleNodeXMLFile() {
-        guard let xmlElement = xmlRootElementInFile("SingleNode") else {
-            XCTFail("Unable to load the test XML element from file.")
-            return
-        }
-        
-        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
-                                        requestQuery: "")
-        
-        guard let node = OverpassNode(xmlElement: xmlElement, response: response) else {
+        guard let node = singleNodeFromXMLFile("SingleNode") else {
             XCTFail("The XML should properly initialize the model.")
             return
         }
@@ -35,6 +27,20 @@ class OverpassNode_AEXMLElementTestCase: XCTestCase {
         XCTAssertEqual(node.tags["historic"], "castle")
         XCTAssertEqual(node.tags["name"], "Schloss Neuschwanstein")
         XCTAssertEqual(node.tags["name:ar"], "قصر نويشفانشتاين")
+    }
+    
+    // MARK: Helper
+    
+    private func singleNodeFromXMLFile(_ name: String) -> OverpassNode? {
+        guard let xmlElement = xmlRootElementInFile(name) else {
+            XCTFail("Unable to load the test XML element from file.")
+            return nil
+        }
+        
+        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
+                                        requestQuery: "")
+        
+        return OverpassNode(xmlElement: xmlElement, response: response)
     }
     
 }
