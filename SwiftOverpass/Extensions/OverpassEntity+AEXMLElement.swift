@@ -30,5 +30,26 @@ extension OverpassEntity {
         return tags
     }
     
+    static func parseMeta(from xmlElement: AEXMLElement) -> Meta? {
+        guard
+            let versionAsString = xmlElement.attributes["version"],
+            let version = Int(versionAsString),
+            let changesetIdAsString = xmlElement.attributes["changeset"],
+            let changesetId = Int(changesetIdAsString),
+            let timestampAsString = xmlElement.attributes["timestamp"],
+            let userIdAsString = xmlElement.attributes["uid"],
+            let userId = Int(userIdAsString),
+            let username = xmlElement.attributes["user"]
+        else {
+                return nil
+        }
+        
+        return Meta(version: version,
+                    changesetId: changesetId,
+                    timestamp: timestampAsString,
+                    userId: userId,
+                    username: username)
+    }
+    
 }
 

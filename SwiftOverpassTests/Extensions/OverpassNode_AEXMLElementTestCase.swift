@@ -29,6 +29,24 @@ class OverpassNode_AEXMLElementTestCase: XCTestCase {
         XCTAssertEqual(node.tags["name:ar"], "قصر نويشفانشتاين")
     }
     
+    func testInitWithSingleNodeWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
+        guard let node = singleNodeFromXMLFile("SingleNodeWithMetaProperties") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        guard let meta = node.meta else {
+            XCTFail("The meta information should've been parsed.")
+            return
+        }
+        
+        XCTAssertEqual(meta.version, 4)
+        XCTAssertEqual(meta.changesetId, 42)
+        XCTAssertEqual(meta.timestamp, "2012-11-30T09:52:43Z")
+        XCTAssertEqual(meta.userId, 1337)
+        XCTAssertEqual(meta.username, "john.doe")
+    }
+    
     // MARK: Helper
     
     private func singleNodeFromXMLFile(_ name: String) -> OverpassNode? {
