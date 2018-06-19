@@ -199,6 +199,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6419CEEF20D99F39006E57BC /* Way */ = {
+			isa = PBXGroup;
+			children = (
+				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
+				64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */,
+			);
+			path = Way;
+			sourceTree = "<group>";
+		};
+		6419CEF120D99F49006E57BC /* Relation */ = {
+			isa = PBXGroup;
+			children = (
+				6408D77620D3184100829A3A /* SingleRelation.xml */,
+				6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */,
+				6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */,
+				64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */,
+			);
+			path = Relation;
+			sourceTree = "<group>";
+		};
+		6419CEF220D99F61006E57BC /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				6441AC4D209A6DAF00B03F3E /* SingleNode.xml */,
+				6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
 		643DB71D20ACE772001A7B95 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,14 +239,9 @@
 		6441AC4B209A6D8B00B03F3E /* XML */ = {
 			isa = PBXGroup;
 			children = (
-				64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */,
-				64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */,
-				6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */,
-				6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */,
-				6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */,
-				6441AC4D209A6DAF00B03F3E /* SingleNode.xml */,
-				6408D77620D3184100829A3A /* SingleRelation.xml */,
-				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
+				6419CEF220D99F61006E57BC /* Node */,
+				6419CEF120D99F49006E57BC /* Relation */,
+				6419CEEF20D99F39006E57BC /* Way */,
 			);
 			path = XML;
 			sourceTree = "<group>";
