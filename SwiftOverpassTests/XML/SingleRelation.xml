@@ -1,0 +1,7 @@
+<relation id="2674373">
+    <member type="way" ref="363580156" role="outer"/>
+    <member type="way" ref="142678633" role="outer"/>
+    <tag k="addr:city" v="Hamburg"/>
+    <tag k="addr:housenumber" v="16"/>
+    <tag k="addr:street" v="Mönckebergstraße"/>
+</relation>

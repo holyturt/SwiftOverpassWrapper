@@ -8,18 +8,14 @@
 
 import Foundation
 
-public final class OverpassWay {
+public final class OverpassWay: OverpassEntity {
     
     // MARK: - Properties
     
     /// The response which made the way
     public fileprivate(set) weak var response: OverpassResponse?
-    /// The id of the way
-    public let id: String
     /// List of id of the nodes which belong to the way
     public let nodeIds: [String]?
-    /// List of tag the node has
-    public let tags: [String : String]
     
     // MARK: - Initializers
     
@@ -27,10 +23,10 @@ public final class OverpassWay {
      Creates a `OverpassWay`
     */
     internal init(id: String, nodeIds: [String]?, tags: [String : String], response: OverpassResponse) {
-        self.id = id
         self.nodeIds = nodeIds
-        self.tags = tags
         self.response = response
+        
+        super.init(id: id, tags: tags)
     }
     
     // MARK: - Public

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EEFF31FE0091E008AAB56 /* UpQuery.swift */; };
 		38F2AE431FD3B15E00BC1D27 /* SwiftOverpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */; };
-		38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */; };
 		38F2AE4A1FD3B15E00BC1D27 /* SwiftOverpass.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F2AE541FD3B40300BC1D27 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE551FD3B40300BC1D27 /* AEXML.framework */; };
 		38F2AE561FD3B40C00BC1D27 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE571FD3B40C00BC1D27 /* Alamofire.framework */; };
@@ -25,7 +24,21 @@
 		38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */; };
 		38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF111FD41A2800BC1D27 /* DownQuery.swift */; };
 		38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */; };
+		6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */; };
+		6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */; };
+		6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6408D77620D3184100829A3A /* SingleRelation.xml */; };
+		643DB70B20ACD986001A7B95 /* OverpassEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70A20ACD986001A7B95 /* OverpassEntity.swift */; };
+		643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */; };
+		643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */ = {isa = PBXBuildFile; fileRef = 643DB71620ACE53F001A7B95 /* SingleWay.xml */; };
+		643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */; };
+		643DB71C20ACE69F001A7B95 /* OverpassWay_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB71B20ACE69F001A7B95 /* OverpassWay_AEXMLElementTestCase.swift */; };
+		643DB71F20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB71E20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift */; };
+		6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6441AC4D209A6DAF00B03F3E /* SingleNode.xml */; };
+		6441AC54209A700B00B03F3E /* OverpassNode+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */; };
+		6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */; };
 		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
+		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
+		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +65,6 @@
 		38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOverpass.h; sourceTree = "<group>"; };
 		38F2AE3D1FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F2AE421FD3B15E00BC1D27 /* SwiftOverpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOverpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOverpassTests.swift; sourceTree = "<group>"; };
 		38F2AE491FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F2AE551FD3B40300BC1D27 /* AEXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2AE571FD3B40C00BC1D27 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +81,21 @@
 		38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassWay.swift; sourceTree = "<group>"; };
 		38F2AF111FD41A2800BC1D27 /* DownQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownQuery.swift; sourceTree = "<group>"; };
 		38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
+		6408D77620D3184100829A3A /* SingleRelation.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelation.xml; sourceTree = "<group>"; };
+		6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassRelation+AEXMLElement.swift"; sourceTree = "<group>"; };
+		6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
+		643DB70A20ACD986001A7B95 /* OverpassEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassEntity.swift; sourceTree = "<group>"; };
+		643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassEntity+AEXMLElement.swift"; sourceTree = "<group>"; };
+		643DB71620ACE53F001A7B95 /* SingleWay.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWay.xml; sourceTree = "<group>"; };
+		643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassWay+AEXMLElement.swift"; sourceTree = "<group>"; };
+		643DB71B20ACE69F001A7B95 /* OverpassWay_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassWay_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
+		643DB71E20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+XMLFromFile.swift"; sourceTree = "<group>"; };
+		6441AC4D209A6DAF00B03F3E /* SingleNode.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNode.xml; sourceTree = "<group>"; };
+		6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassNode+AEXMLElement.swift"; sourceTree = "<group>"; };
+		6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
 		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
+		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
+		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +149,7 @@
 		38F2AE3B1FD3B15E00BC1D27 /* SwiftOverpass */ = {
 			isa = PBXGroup;
 			children = (
+				6441AC50209A6ED000B03F3E /* Extensions */,
 				38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */,
 				38F2AE3D1FD3B15E00BC1D27 /* Info.plist */,
 				38F2AEA21FD3CD6100BC1D27 /* SwiftOverpass.swift */,
@@ -138,6 +165,7 @@
 				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
 				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				38F2AEA61FD3CDAA00BC1D27 /* BoudingBox.swift */,
+				643DB70A20ACD986001A7B95 /* OverpassEntity.swift */,
 			);
 			path = SwiftOverpass;
 			sourceTree = "<group>";
@@ -145,8 +173,10 @@
 		38F2AE461FD3B15E00BC1D27 /* SwiftOverpassTests */ = {
 			isa = PBXGroup;
 			children = (
+				643DB71D20ACE772001A7B95 /* Helpers */,
+				6441AC4F209A6DED00B03F3E /* Extensions */,
 				64570075207552870061A81D /* Models */,
-				38F2AE471FD3B15E00BC1D27 /* SwiftOverpassTests.swift */,
+				6441AC4B209A6D8B00B03F3E /* XML */,
 				38F2AE491FD3B15E00BC1D27 /* Info.plist */,
 			);
 			path = SwiftOverpassTests;
@@ -161,6 +191,47 @@
 				38F2AE551FD3B40300BC1D27 /* AEXML.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		643DB71D20ACE772001A7B95 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				643DB71E20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6441AC4B209A6D8B00B03F3E /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */,
+				6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */,
+				6441AC4D209A6DAF00B03F3E /* SingleNode.xml */,
+				6408D77620D3184100829A3A /* SingleRelation.xml */,
+				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+		6441AC4F209A6DED00B03F3E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6441AC55209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift */,
+				6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */,
+				643DB71B20ACE69F001A7B95 /* OverpassWay_AEXMLElementTestCase.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6441AC50209A6ED000B03F3E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6441AC53209A700B00B03F3E /* OverpassNode+AEXMLElement.swift */,
+				643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */,
+				6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */,
+				643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		64570075207552870061A81D /* Models */ = {
@@ -288,6 +359,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */,
+				6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */,
+				643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */,
+				6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */,
+				6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */,
+				6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */,
 				387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */,
 				38F2AEA31FD3CD6100BC1D27 /* SwiftOverpass.swift in Sources */,
 				38F2AEA71FD3CDAA00BC1D27 /* BoudingBox.swift in Sources */,
@@ -306,11 +384,14 @@
 				38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */,
 				38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */,
 				38F2AEB01FD3CF3E00BC1D27 /* RelationQuery.swift in Sources */,
+				643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */,
 				38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */,
 				38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */,
+				643DB70B20ACD986001A7B95 /* OverpassEntity.swift in Sources */,
 				38F2AEA91FD3CDEA00BC1D27 /* OverpassQuery.swift in Sources */,
 				38F2AEAC1FD3CF1300BC1D27 /* NodeQuery.swift in Sources */,
 				38F2AEA51FD3CD9E00BC1D27 /* OverpassTag.swift in Sources */,
+				6441AC54209A700B00B03F3E /* OverpassNode+AEXMLElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F2AE481FD3B15E00BC1D27 /* SwiftOverpassTests.swift in Sources */,
 				64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */,
+				643DB71C20ACE69F001A7B95 /* OverpassWay_AEXMLElementTestCase.swift in Sources */,
+				643DB71F20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift in Sources */,
+				6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */,
+				6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
