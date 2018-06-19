@@ -36,10 +36,10 @@ extension OverpassNode {
         }
         
         self.init(id: id,
-                  lat: latitude,
-                  lon: longitude,
                   tags: tags,
                   meta: meta,
+                  lat: latitude,
+                  lon: longitude,
                   response: response)
     }
     

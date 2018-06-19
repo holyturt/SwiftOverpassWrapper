@@ -24,7 +24,7 @@ public final class OverpassNode: OverpassEntity {
     /**
      Creates a `OverpassNode`
     */
-    internal init(id: String, lat: Double, lon: Double, tags: [String : String], meta: Meta?, response: OverpassResponse) {
+    internal init(id: String, tags: [String : String], meta: Meta?, lat: Double, lon: Double, response: OverpassResponse) {
         
         self.latitude = lat
         self.longitude = lon

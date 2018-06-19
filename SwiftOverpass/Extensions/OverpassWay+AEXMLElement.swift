@@ -31,7 +31,7 @@ extension OverpassWay {
             nodeIds = nodes.map { $0.attributes["ref"]! }
         }
         
-        self.init(id: id, nodeIds: nodeIds, tags: tags, meta: meta, response: response)
+        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, response: response)
     }
     
 }

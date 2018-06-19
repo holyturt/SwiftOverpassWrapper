@@ -55,7 +55,7 @@ extension OverpassRelation {
             members = []
         }
         
-        self.init(id: id, members: members, tags: tags, meta: meta, response: response)
+        self.init(id: id, tags: tags, meta: meta, members: members, response: response)
     }
     
 }
