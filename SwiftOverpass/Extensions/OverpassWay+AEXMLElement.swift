@@ -24,13 +24,14 @@ extension OverpassWay {
             return nil
         }
         let tags = OverpassEntity.parseTags(from: xmlElement)
+        let meta = OverpassEntity.parseMeta(from: xmlElement)
         
         var nodeIds: [String]?
         if let nodes = xmlElement["nd"].all {
             nodeIds = nodes.map { $0.attributes["ref"]! }
         }
         
-        self.init(id: id, nodeIds: nodeIds, tags: tags, response: response)
+        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, response: response)
     }
     
 }

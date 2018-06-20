@@ -31,11 +31,11 @@ public final class OverpassRelation: OverpassEntity {
     /**
      Creates a `OverpassRelation`
     */
-    internal init(id: String, members: [Member]?, tags: [String : String], response: OverpassResponse) {
+    internal init(id: String, tags: [String : String], meta: Meta?, members: [Member]?, response: OverpassResponse) {
         self.members = members
         self.response = response
         
-        super.init(id: id, tags: tags)
+        super.init(id: id, tags: tags, meta: meta)
     }
     
     // MARK: - Public

@@ -1,0 +1,5 @@
+<node id="1234567" lat="41.8947855" lon="12.4919107" version="4" timestamp="2012-11-30T09:52:43Z" changeset="42" uid="1337" user="john.doe">
+    <tag k="amenity" v="drinking_water"/>
+    <tag k="flow" v="push-button"/>
+    <tag k="fountain" v="nasone"/>
+</node>

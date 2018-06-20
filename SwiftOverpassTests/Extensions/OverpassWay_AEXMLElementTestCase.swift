@@ -15,15 +15,7 @@ import Alamofire
 class OverpassWay_AEXMLElementTestCase: XCTestCase {
     
     func testInitWithXMLElementShouldParseSingleNodeXMLFile() {
-        guard let xmlElement = xmlRootElementInFile("SingleWay") else {
-            XCTFail("Unable to load the test XML element from file.")
-            return
-        }
-        
-        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
-                                        requestQuery: "")
-        
-        guard let way = OverpassWay(xmlElement: xmlElement, response: response) else {
+        guard let way = singleWayFromXMLFile("SingleWay") else {
             XCTFail("The XML should properly initialize the model.")
             return
         }
@@ -33,6 +25,38 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
         
         let expectedNodeIds = ["292831593", "292831592"]
         XCTAssertEqual(way.nodeIds, expectedNodeIds)
+    }
+    
+    func testInitWithSingleWayWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
+        guard let way = singleWayFromXMLFile("SingleWayWithMetaProperties") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        guard let meta = way.meta else {
+            XCTFail("The meta information should've been parsed.")
+            return
+        }
+        
+        XCTAssertEqual(meta.version, 4)
+        XCTAssertEqual(meta.changesetId, 42)
+        XCTAssertEqual(meta.timestamp, "2012-11-30T09:52:43Z")
+        XCTAssertEqual(meta.userId, 1337)
+        XCTAssertEqual(meta.username, "john.doe")
+    }
+    
+    // MARK: Helper
+    
+    private func singleWayFromXMLFile(_ name: String) -> OverpassWay? {
+        guard let xmlElement = xmlRootElementInFile(name) else {
+            XCTFail("Unable to load the test XML element from file.")
+            return nil
+        }
+        
+        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
+                                        requestQuery: "")
+        
+        return OverpassWay(xmlElement: xmlElement, response: response)
     }
     
 }

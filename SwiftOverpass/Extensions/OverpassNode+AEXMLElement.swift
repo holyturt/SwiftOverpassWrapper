@@ -24,6 +24,7 @@ extension OverpassNode {
             return nil
         }
         let tags = OverpassEntity.parseTags(from: xmlElement)
+        let meta = OverpassEntity.parseMeta(from: xmlElement)
         
         guard
             let latitudeAsString = xmlElement.attributes["lat"],
@@ -35,9 +36,10 @@ extension OverpassNode {
         }
         
         self.init(id: id,
+                  tags: tags,
+                  meta: meta,
                   lat: latitude,
                   lon: longitude,
-                  tags: tags,
                   response: response)
     }
     

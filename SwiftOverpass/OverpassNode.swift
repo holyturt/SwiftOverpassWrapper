@@ -24,13 +24,13 @@ public final class OverpassNode: OverpassEntity {
     /**
      Creates a `OverpassNode`
     */
-    internal init(id: String, lat: Double, lon: Double, tags: [String : String], response: OverpassResponse) {
+    internal init(id: String, tags: [String : String], meta: Meta?, lat: Double, lon: Double, response: OverpassResponse) {
         
         self.latitude = lat
         self.longitude = lon
         self.response = response
         
-        super.init(id: id, tags: tags)
+        super.init(id: id, tags: tags, meta: meta)
     }
     
     // MARK: Public

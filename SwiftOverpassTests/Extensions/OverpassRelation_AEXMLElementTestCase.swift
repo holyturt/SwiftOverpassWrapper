@@ -59,6 +59,24 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
         XCTAssertTrue(relation.members?.isEmpty ?? true)
     }
     
+    func testInitWithSingleRelationWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
+        guard let relation = singleRelationFromXMLFile("SingleRelationWithMetaProperties") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        guard let meta = relation.meta else {
+            XCTFail("The meta information should've been parsed.")
+            return
+        }
+        
+        XCTAssertEqual(meta.version, 4)
+        XCTAssertEqual(meta.changesetId, 42)
+        XCTAssertEqual(meta.timestamp, "2012-11-30T09:52:43Z")
+        XCTAssertEqual(meta.userId, 1337)
+        XCTAssertEqual(meta.username, "john.doe")
+    }
+    
     // MARK: Helper
     
     private func singleRelationFromXMLFile(_ name: String) -> OverpassRelation? {

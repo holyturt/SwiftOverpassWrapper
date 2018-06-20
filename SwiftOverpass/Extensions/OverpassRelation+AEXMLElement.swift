@@ -24,6 +24,7 @@ extension OverpassRelation {
             return nil
         }
         let tags = OverpassEntity.parseTags(from: xmlElement)
+        let meta = OverpassEntity.parseMeta(from: xmlElement)
         
         let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {
@@ -54,7 +55,7 @@ extension OverpassRelation {
             members = []
         }
         
-        self.init(id: id, members: members, tags: tags, response: response)
+        self.init(id: id, tags: tags, meta: meta, members: members, response: response)
     }
     
 }
