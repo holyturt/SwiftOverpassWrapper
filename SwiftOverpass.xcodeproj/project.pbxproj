@@ -155,6 +155,7 @@
 		38F2AE3B1FD3B15E00BC1D27 /* SwiftOverpass */ = {
 			isa = PBXGroup;
 			children = (
+				64BDA7C720DD9C66004C47A7 /* Elements */,
 				6441AC50209A6ED000B03F3E /* Extensions */,
 				38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */,
 				38F2AE3D1FD3B15E00BC1D27 /* Info.plist */,
@@ -166,12 +167,8 @@
 				387EEFF31FE0091E008AAB56 /* UpQuery.swift */,
 				38F2AF111FD41A2800BC1D27 /* DownQuery.swift */,
 				38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */,
-				38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */,
-				38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */,
-				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
 				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				38F2AEA61FD3CDAA00BC1D27 /* BoudingBox.swift */,
-				643DB70A20ACD986001A7B95 /* OverpassEntity.swift */,
 			);
 			path = SwiftOverpass;
 			sourceTree = "<group>";
@@ -273,6 +270,17 @@
 				64570077207552AA0061A81D /* OverpassTagTestCase.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		64BDA7C720DD9C66004C47A7 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				643DB70A20ACD986001A7B95 /* OverpassEntity.swift */,
+				38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */,
+				38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */,
+				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
