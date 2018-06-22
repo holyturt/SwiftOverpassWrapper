@@ -42,6 +42,7 @@
 		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
 		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
+		64BDA7CA20DDA3CF004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
 		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
+		64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWayWithNodeThatIsMissingItsID.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				643DB71620ACE53F001A7B95 /* SingleWay.xml */,
+				64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */,
 				64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */,
 			);
 			path = Way;
@@ -405,6 +408,7 @@
 				6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */,
 				6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */,
 				643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */,
+				64BDA7CA20DDA3CF004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml in Resources */,
 				6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */,
 				6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */,
 				64732EA920D6734600B5646E /* SingleRelationWithMetaProperties.xml in Resources */,

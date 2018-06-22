@@ -27,6 +27,15 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
         XCTAssertEqual(way.nodeIds, expectedNodeIds)
     }
     
+    func testInitWithXMLElementShouldIgnoreNodesThatAreLackingAnID() {
+        guard let way = singleWayFromXMLFile("SingleWayWithNodeThatIsMissingItsID") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        XCTAssertEqual(way.nodeIds, ["292831592"])
+    }
+    
     func testInitWithSingleWayWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
         guard let way = singleWayFromXMLFile("SingleWayWithMetaProperties") else {
             XCTFail("The XML should properly initialize the model.")

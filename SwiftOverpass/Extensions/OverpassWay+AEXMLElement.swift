@@ -28,7 +28,13 @@ extension OverpassWay {
         
         var nodeIds: [String]?
         if let nodes = xmlElement["nd"].all {
-            nodeIds = nodes.map { $0.attributes["ref"]! }
+            nodeIds = nodes.compactMap {
+                guard let idAsString = $0.attributes["ref"] else {
+                    return nil
+                }
+                
+                return idAsString
+            }
         }
         
         self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, response: response)
