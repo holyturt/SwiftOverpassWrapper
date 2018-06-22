@@ -15,7 +15,7 @@ public final class OverpassWay: OverpassElement {
     // MARK: - Properties
     
     /// List of id of the nodes which belong to the way
-    public let nodeIds: [Int]?
+    public let nodeIds: [Int]
     
     /// An object that is used to look up related elements that were received with the same response.
     private weak var responseElementProvider: OverpassResponseElementsProviding?
@@ -28,7 +28,7 @@ public final class OverpassWay: OverpassElement {
     internal init(id: Int,
                   tags: [String : String],
                   meta: Meta?,
-                  nodeIds: [Int]?,
+                  nodeIds: [Int] = [],
                   responseElementProvider: OverpassResponseElementsProviding?) {
         self.nodeIds = nodeIds
         self.responseElementProvider = responseElementProvider
@@ -42,10 +42,10 @@ public final class OverpassWay: OverpassElement {
      Returns nodes that related to the way after load from response
     */
     public func loadRelatedNodes() -> [OverpassNode]? {
-        if let nodes = responseElementProvider?.nodes, let ids = nodeIds {
+        if let nodes = responseElementProvider?.nodes {
             
             var filtered = [OverpassNode]()
-            ids.forEach { id in
+            nodeIds.forEach { id in
                 if let index = nodes.index(where: { $0.id == id }) {
                     filtered.append(nodes[index])
                     return
@@ -69,11 +69,9 @@ public final class OverpassWay: OverpassElement {
             var filtered = [OverpassRelation]()
             
             allRels.forEach { relation in
-                if let members = relation.members {
-                    members.forEach { member in
-                        if member.type == .way && member.id == self.id {
-                            filtered.append(relation)
-                        }
+                relation.members.forEach { member in
+                    if member.type == .way && member.id == self.id {
+                        filtered.append(relation)
                     }
                 }
             }

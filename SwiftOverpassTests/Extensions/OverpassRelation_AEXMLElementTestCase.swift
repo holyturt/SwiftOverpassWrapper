@@ -55,7 +55,7 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertTrue(relation.members?.isEmpty ?? true)
+        XCTAssertTrue(relation.members.isEmpty)
     }
     
     func testInitWithSingleRelationWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {

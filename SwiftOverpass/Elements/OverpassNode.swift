@@ -67,11 +67,9 @@ public final class OverpassNode: OverpassElement {
             var filtered = [OverpassRelation]()
             
             allRels.forEach { relation in
-                if let members = relation.members {
-                    members.forEach { member in
-                        if member.type == .node && member.id == self.id {
-                            filtered.append(relation)
-                        }
+                relation.members.forEach { member in
+                    if member.type == .node && member.id == self.id {
+                        filtered.append(relation)
                     }
                 }
             }

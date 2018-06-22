@@ -27,7 +27,7 @@ extension OverpassWay {
         let tags = OverpassElement.parseTags(from: xmlElement)
         let meta = OverpassElement.parseMeta(from: xmlElement)
 
-        var nodeIds: [Int]?
+        let nodeIds: [Int]
         if let nodeXMLElements = xmlElement["nd"].all {
             nodeIds = nodeXMLElements.compactMap { singleNodeXMLElement in
                 guard
@@ -39,6 +39,8 @@ extension OverpassWay {
                 
                 return id
             }
+        } else {
+            nodeIds = []
         }
         
         self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, responseElementProvider: responseElementProvider)

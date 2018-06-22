@@ -25,7 +25,7 @@ public final class OverpassRelation: OverpassElement {
     // MARK: - Properties
     
     /// List of member the relation has
-    public let members: [Member]?
+    public let members: [Member]
     
     /// An object that is used to look up related elements that were received with the same response.
     private weak var responseElementProvider: OverpassResponseElementsProviding?
@@ -38,7 +38,7 @@ public final class OverpassRelation: OverpassElement {
     internal init(id: Int,
                   tags: [String : String],
                   meta: Meta?,
-                  members: [Member]?,
+                  members: [Member] = [],
                   responseElementProvider: OverpassResponseElementsProviding?) {
         self.members = members
         self.responseElementProvider = responseElementProvider
@@ -52,7 +52,7 @@ public final class OverpassRelation: OverpassElement {
      Returns nodes that related to the relation after load from response
      */
     public func loadRelatedNodes() -> [OverpassNode]? {
-        if let allNodes = responseElementProvider?.nodes, let members = members {
+        if let allNodes = responseElementProvider?.nodes {
             let nodeIds = members.filter { $0.type == .node }
                 .map { $0.id }
             
@@ -77,7 +77,7 @@ public final class OverpassRelation: OverpassElement {
      Return ways that related to the relation after load from response
     */
     public func loadRelatedWays() -> [OverpassWay]? {
-        if let allWays = responseElementProvider?.ways, let members = members {
+        if let allWays = responseElementProvider?.ways {
             let wayIds = members.filter { $0.type == .way }
                 .map { $0.id }
             
@@ -102,7 +102,7 @@ public final class OverpassRelation: OverpassElement {
      Return another relations that related to the relation after load from response
     */
     public func loadRelatedRelations() -> [OverpassRelation]? {
-        if let allRels = responseElementProvider?.relations, let members = members {
+        if let allRels = responseElementProvider?.relations {
             let relIds = members.filter { $0.type == .relation }
                 .map { $0.id }
             
