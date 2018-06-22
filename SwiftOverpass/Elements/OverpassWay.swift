@@ -24,7 +24,7 @@ public final class OverpassWay: OverpassElement {
     /**
      Creates a `OverpassWay`
     */
-    internal init(id: Int, tags: [String : String], meta: Meta?, nodeIds: [Int]?, response: OverpassResponse) {
+    internal init(id: Int, tags: [String : String], meta: Meta?, nodeIds: [Int]?, response: OverpassResponse?) {
         self.nodeIds = nodeIds
         self.response = response
         

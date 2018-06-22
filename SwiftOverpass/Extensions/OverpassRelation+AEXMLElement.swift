@@ -17,7 +17,7 @@ extension OverpassRelation {
     /// - Parameters:
     ///   - xmlElement: The XML element to create the relation from.
     ///   - response: Overpass response object that can be used to lookup related features.
-    convenience init?(xmlElement: AEXMLElement, response: OverpassResponse) {
+    convenience init?(xmlElement: AEXMLElement, response: OverpassResponse? = nil) {
         
         // Basic element properties
         guard let id = OverpassElement.parseId(from: xmlElement) else {
