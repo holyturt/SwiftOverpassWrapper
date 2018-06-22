@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class OverpassRelation: OverpassEntity {
+public final class OverpassRelation: OverpassElement {
     
     // MARK: - Constants
     

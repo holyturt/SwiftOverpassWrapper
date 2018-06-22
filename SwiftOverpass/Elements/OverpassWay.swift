@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class OverpassWay: OverpassEntity {
+public final class OverpassWay: OverpassElement {
     
     // MARK: - Properties
     

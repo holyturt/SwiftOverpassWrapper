@@ -19,12 +19,12 @@ extension OverpassRelation {
     ///   - response: Overpass response object that can be used to lookup related features.
     convenience init?(xmlElement: AEXMLElement, response: OverpassResponse) {
         
-        // Basic entity properties
-        guard let id = OverpassEntity.parseEntityId(from: xmlElement) else {
+        // Basic element properties
+        guard let id = OverpassElement.parseId(from: xmlElement) else {
             return nil
         }
-        let tags = OverpassEntity.parseTags(from: xmlElement)
-        let meta = OverpassEntity.parseMeta(from: xmlElement)
+        let tags = OverpassElement.parseTags(from: xmlElement)
+        let meta = OverpassElement.parseMeta(from: xmlElement)
         
         let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {

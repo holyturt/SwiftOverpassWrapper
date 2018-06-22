@@ -1,5 +1,5 @@
 //
-//  OverpassEntity.swift
+//  OverpassElement.swift
 //  SwiftOverpass
 //
 //  Created by Wolfgang Timme on 5/16/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class OverpassEntity {
+public class OverpassElement {
     
     public struct Meta {
         public let version: Int
@@ -18,10 +18,10 @@ public class OverpassEntity {
         public let username: String
     }
 
-    /// The id of the entity
+    /// The id of the element
     public let id: String
     
-    /// List of tag the entity has
+    /// List of tag the element has
     public let tags: [String: String]
     
     public let meta: Meta?

@@ -1,5 +1,5 @@
 //
-//  OverpassEntity+AEXMLElement.swift
+//  OverpassElement+AEXMLElement.swift
 //  SwiftOverpass
 //
 //  Created by Wolfgang Timme on 5/16/18.
@@ -10,9 +10,9 @@ import Foundation
 
 import AEXML
 
-extension OverpassEntity {
+extension OverpassElement {
     
-    static func parseEntityId(from xmlElement: AEXMLElement) -> String? {
+    static func parseId(from xmlElement: AEXMLElement) -> String? {
         return xmlElement.attributes["id"]
     }
     
