@@ -43,6 +43,7 @@
 		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
 		64BDA7CA20DDA3CF004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */; };
+		64BDA7CD20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA7CC20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
 		64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWayWithNodeThatIsMissingItsID.xml; sourceTree = "<group>"; };
+		64BDA7CC20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementProviderMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		38F2AE461FD3B15E00BC1D27 /* SwiftOverpassTests */ = {
 			isa = PBXGroup;
 			children = (
+				64BDA7CB20DDAF21004C47A7 /* Mocks */,
 				643DB71D20ACE772001A7B95 /* Helpers */,
 				6441AC4F209A6DED00B03F3E /* Extensions */,
 				64570075207552870061A81D /* Models */,
@@ -284,6 +287,14 @@
 				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		64BDA7CB20DDAF21004C47A7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				64BDA7CC20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 				643DB71F20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift in Sources */,
 				6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */,
 				6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */,
+				64BDA7CD20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
