@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// An OpenStreetMap element that consists of a single point in space defined by its latitude, longitude and node id.
+/// See: https://wiki.openstreetmap.org/wiki/Node
 public final class OverpassNode: OverpassElement {
     
     // MARK: - Properties

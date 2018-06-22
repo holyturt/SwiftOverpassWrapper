@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// The basic components of OpenStreetMap's conceptual data model of the physical world.
+/// See: https://wiki.openstreetmap.org/wiki/Elements
 public class OverpassElement {
     
     public struct Meta {

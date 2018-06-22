@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// An OpenStreetMap element that consists of one or more tags and also an ordered list of one or more nodes,
+/// ways and/or relations as members which is used to define logical or geographic relationships between other elements.
+/// See: https://wiki.openstreetmap.org/wiki/Relation
 public final class OverpassRelation: OverpassElement {
     
     // MARK: - Constants

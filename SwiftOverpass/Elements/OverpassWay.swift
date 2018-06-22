@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// An ordered list of nodes which normally also has at least one tag or is included within a `OverpassRelation`.
+/// See: https://wiki.openstreetmap.org/wiki/Way
 public final class OverpassWay: OverpassElement {
     
     // MARK: - Properties
