@@ -48,7 +48,7 @@ extension OverpassElement {
             let userId = Int(userIdAsString),
             let username = xmlElement.attributes["user"]
         else {
-                return nil
+            return nil
         }
         
         return Meta(version: version,
