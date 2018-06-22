@@ -21,14 +21,14 @@ public class OverpassElement {
     }
 
     /// The id of the element
-    public let id: String
+    public let id: Int
     
     /// List of tag the element has
     public let tags: [String: String]
     
     public let meta: Meta?
     
-    public init(id: String, tags: [String: String], meta: Meta? = nil) {
+    public init(id: Int, tags: [String: String], meta: Meta? = nil) {
         self.id = id
         self.tags = tags
         self.meta = meta

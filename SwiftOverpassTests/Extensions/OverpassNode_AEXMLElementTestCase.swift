@@ -20,7 +20,7 @@ class OverpassNode_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(node.id, "2306343684")
+        XCTAssertEqual(node.id, 2306343684)
         XCTAssertEqual(node.latitude, 47.5575606)
         XCTAssertEqual(node.longitude, 10.7497321)
         

@@ -43,7 +43,10 @@ extension OverpassRelation {
                     return nil
                 }
                 
-                guard let id = $0.attributes["ref"] else {
+                guard
+                    let idAsString = $0.attributes["ref"],
+                    let id = Int(idAsString)
+                else {
                     // Members must have an ID.
                     return nil
                 }

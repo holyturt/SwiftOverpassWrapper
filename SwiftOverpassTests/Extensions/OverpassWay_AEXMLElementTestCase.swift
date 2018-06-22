@@ -20,10 +20,10 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(way.id, "587898625")
+        XCTAssertEqual(way.id, 587898625)
         XCTAssertEqual(way.tags["highway"], "secondary")
         
-        let expectedNodeIds = ["292831593", "292831592"]
+        let expectedNodeIds = [292831593, 292831592]
         XCTAssertEqual(way.nodeIds, expectedNodeIds)
     }
     
@@ -33,7 +33,7 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(way.nodeIds, ["292831592"])
+        XCTAssertEqual(way.nodeIds, [292831592])
     }
     
     func testInitWithSingleWayWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {

@@ -18,7 +18,7 @@ public final class OverpassRelation: OverpassElement {
     /// Represents a <member> element
     public struct Member: Equatable {
         let type: OverpassQueryType
-        let id: String
+        let id: Int
         let role: String?
     }
     
@@ -34,7 +34,7 @@ public final class OverpassRelation: OverpassElement {
     /**
      Creates a `OverpassRelation`
     */
-    internal init(id: String, tags: [String : String], meta: Meta?, members: [Member]?, response: OverpassResponse) {
+    internal init(id: Int, tags: [String : String], meta: Meta?, members: [Member]?, response: OverpassResponse) {
         self.members = members
         self.response = response
         

@@ -25,15 +25,18 @@ extension OverpassWay {
         }
         let tags = OverpassElement.parseTags(from: xmlElement)
         let meta = OverpassElement.parseMeta(from: xmlElement)
-        
-        var nodeIds: [String]?
-        if let nodes = xmlElement["nd"].all {
-            nodeIds = nodes.compactMap {
-                guard let idAsString = $0.attributes["ref"] else {
+
+        var nodeIds: [Int]?
+        if let nodeXMLElements = xmlElement["nd"].all {
+            nodeIds = nodeXMLElements.compactMap { singleNodeXMLElement in
+                guard
+                    let idAsString = singleNodeXMLElement.attributes["ref"],
+                    let id = Int(idAsString)
+                else {
                     return nil
                 }
                 
-                return idAsString
+                return id
             }
         }
         

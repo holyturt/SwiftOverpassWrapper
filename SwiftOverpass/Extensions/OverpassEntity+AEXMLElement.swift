@@ -12,8 +12,15 @@ import AEXML
 
 extension OverpassElement {
     
-    static func parseId(from xmlElement: AEXMLElement) -> String? {
-        return xmlElement.attributes["id"]
+    static func parseId(from xmlElement: AEXMLElement) -> Int? {
+        guard
+            let idAsString = xmlElement.attributes["id"],
+            let id = Int(idAsString)
+        else {
+            return nil
+        }
+        
+        return id
     }
     
     static func parseTags(from xmlElement: AEXMLElement) -> [String: String] {

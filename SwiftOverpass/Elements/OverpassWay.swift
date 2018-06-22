@@ -17,14 +17,14 @@ public final class OverpassWay: OverpassElement {
     /// The response which made the way
     public fileprivate(set) weak var response: OverpassResponse?
     /// List of id of the nodes which belong to the way
-    public let nodeIds: [String]?
+    public let nodeIds: [Int]?
     
     // MARK: - Initializers
     
     /**
      Creates a `OverpassWay`
     */
-    internal init(id: String, tags: [String : String], meta: Meta?, nodeIds: [String]?, response: OverpassResponse) {
+    internal init(id: Int, tags: [String : String], meta: Meta?, nodeIds: [Int]?, response: OverpassResponse) {
         self.nodeIds = nodeIds
         self.response = response
         

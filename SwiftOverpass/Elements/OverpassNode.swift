@@ -26,7 +26,7 @@ public final class OverpassNode: OverpassElement {
     /**
      Creates a `OverpassNode`
     */
-    internal init(id: String, tags: [String : String], meta: Meta?, lat: Double, lon: Double, response: OverpassResponse) {
+    internal init(id: Int, tags: [String : String], meta: Meta?, lat: Double, lon: Double, response: OverpassResponse) {
         
         self.latitude = lat
         self.longitude = lon
