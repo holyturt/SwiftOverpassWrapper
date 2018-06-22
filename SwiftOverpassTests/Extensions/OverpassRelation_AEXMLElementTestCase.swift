@@ -9,7 +9,6 @@
 import XCTest
 
 import AEXML
-import Alamofire
 @testable import SwiftOverpass
 
 class OverpassRelation_AEXMLElementTestCase: XCTestCase {
@@ -85,10 +84,7 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
             return nil
         }
         
-        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
-                                        requestQuery: "")
-        
-        return OverpassRelation(xmlElement: xmlElement, response: response)
+        return OverpassRelation(xmlElement: xmlElement)
     }
     
 }

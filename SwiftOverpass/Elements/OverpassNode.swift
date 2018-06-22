@@ -14,8 +14,6 @@ public final class OverpassNode: OverpassElement {
     
     // MARK: - Properties
     
-    /// The response which made the node
-    public fileprivate(set) weak var response: OverpassResponse?
     /// The latitude of the node
     public let latitude: Double
     /// The longitude of the node
@@ -26,11 +24,16 @@ public final class OverpassNode: OverpassElement {
     /**
      Creates a `OverpassNode`
     */
-    internal init(id: Int, tags: [String : String], meta: Meta?, lat: Double, lon: Double, response: OverpassResponse?) {
+    internal init(id: Int,
+                  tags: [String : String],
+                  meta: Meta?,
+                  lat: Double,
+                  lon: Double,
+                  responseElementProvider: OverpassResponseElementsProviding?) {
         
         self.latitude = lat
         self.longitude = lon
-        self.response = response
+        self.responseElementProvider = responseElementProvider
         
         super.init(id: id, tags: tags, meta: meta)
     }
@@ -41,7 +44,7 @@ public final class OverpassNode: OverpassElement {
      Returns ways that related to the node after load from response
     */
     public func loadRelatedWays() -> [OverpassWay]? {
-        if let response = response, let ways = response.ways {
+        if let ways = responseElementProvider?.ways {
             let filtered = ways.filter { $0.id == id }
             
             // Returns if it has some ways.
@@ -57,7 +60,7 @@ public final class OverpassNode: OverpassElement {
      Returns another relations that related to the node after load from response
      */
     public func loadRelatedRelations() -> [OverpassRelation]? {
-        if let response = response, let allRels = response.relations {
+        if let allRels = responseElementProvider?.relations {
             var filtered = [OverpassRelation]()
             
             allRels.forEach { relation in
@@ -78,4 +81,9 @@ public final class OverpassNode: OverpassElement {
         
         return nil
     }
+    
+    // MARK: Private
+    
+    /// An object that is used to look up related elements that were received with the same response.
+    private weak var responseElementProvider: OverpassResponseElementsProviding?
 }

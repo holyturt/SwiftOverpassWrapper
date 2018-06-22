@@ -46,7 +46,7 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
             // Parses xml to create `OverpassNode`
             if let nodes = xmlDoc.root["node"].all {
                 self.nodes = nodes.compactMap { nodeXMLElement in
-                    return OverpassNode(xmlElement: nodeXMLElement, response: self)
+                    return OverpassNode(xmlElement: nodeXMLElement, responseElementProvider: self)
                 }
             }
             
