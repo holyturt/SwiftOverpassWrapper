@@ -16,8 +16,9 @@ extension OverpassWay {
     ///
     /// - Parameters:
     ///   - xmlElement: The XML element to create the way from.
-    ///   - response: Overpass response object that can be used to lookup related features.
-    convenience init?(xmlElement: AEXMLElement, response: OverpassResponse? = nil) {
+    ///   - responseElementProvider: An object that is used to look up related elements
+    ///                              that were received with the same response.
+    convenience init?(xmlElement: AEXMLElement, responseElementProvider: OverpassResponseElementsProviding? = nil) {
         
         // Basic element properties
         guard let id = OverpassElement.parseId(from: xmlElement) else {
@@ -40,7 +41,7 @@ extension OverpassWay {
             }
         }
         
-        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, response: response)
+        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, responseElementProvider: responseElementProvider)
     }
     
 }

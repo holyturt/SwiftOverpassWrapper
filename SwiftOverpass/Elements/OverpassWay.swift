@@ -14,19 +14,24 @@ public final class OverpassWay: OverpassElement {
     
     // MARK: - Properties
     
-    /// The response which made the way
-    public fileprivate(set) weak var response: OverpassResponse?
     /// List of id of the nodes which belong to the way
     public let nodeIds: [Int]?
+    
+    /// An object that is used to look up related elements that were received with the same response.
+    private weak var responseElementProvider: OverpassResponseElementsProviding?
     
     // MARK: - Initializers
     
     /**
      Creates a `OverpassWay`
     */
-    internal init(id: Int, tags: [String : String], meta: Meta?, nodeIds: [Int]?, response: OverpassResponse?) {
+    internal init(id: Int,
+                  tags: [String : String],
+                  meta: Meta?,
+                  nodeIds: [Int]?,
+                  responseElementProvider: OverpassResponseElementsProviding?) {
         self.nodeIds = nodeIds
-        self.response = response
+        self.responseElementProvider = responseElementProvider
         
         super.init(id: id, tags: tags, meta: meta)
     }
@@ -37,7 +42,7 @@ public final class OverpassWay: OverpassElement {
      Returns nodes that related to the way after load from response
     */
     public func loadRelatedNodes() -> [OverpassNode]? {
-        if let response = response, let nodes = response.nodes, let ids = nodeIds {
+        if let nodes = responseElementProvider?.nodes, let ids = nodeIds {
             
             var filtered = [OverpassNode]()
             ids.forEach { id in
@@ -60,7 +65,7 @@ public final class OverpassWay: OverpassElement {
      Returns another relations that related to the way after load from response
      */
     public func loadRelatedRelations() -> [OverpassRelation]? {
-        if let response = response, let allRels = response.relations {
+        if let allRels = responseElementProvider?.relations {
             var filtered = [OverpassRelation]()
             
             allRels.forEach { relation in

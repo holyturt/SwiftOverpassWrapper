@@ -19,6 +19,9 @@ public final class OverpassNode: OverpassElement {
     /// The longitude of the node
     public let longitude: Double
     
+    /// An object that is used to look up related elements that were received with the same response.
+    private weak var responseElementProvider: OverpassResponseElementsProviding?
+    
     // MARK: - Initializers
     
     /**
@@ -81,9 +84,4 @@ public final class OverpassNode: OverpassElement {
         
         return nil
     }
-    
-    // MARK: Private
-    
-    /// An object that is used to look up related elements that were received with the same response.
-    private weak var responseElementProvider: OverpassResponseElementsProviding?
 }

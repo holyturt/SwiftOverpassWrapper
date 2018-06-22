@@ -53,14 +53,14 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
             // Parses xml to create `OverpassWay`
             if let ways = xmlDoc.root["way"].all {
                 self.ways = ways.compactMap { wayXMLElement in
-                    return OverpassWay(xmlElement: wayXMLElement, response: self)
+                    return OverpassWay(xmlElement: wayXMLElement, responseElementProvider: self)
                 }
             }
             
             // Parses xml to create `OverpassRelation`
             if let rels = xmlDoc.root["relation"].all {
                 self.relations = rels.compactMap { relationXMLElement in
-                    return OverpassRelation(xmlElement: relationXMLElement, response: self)
+                    return OverpassRelation(xmlElement: relationXMLElement, responseElementProvider: self)
                 }
             }
         } catch {
