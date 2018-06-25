@@ -9,7 +9,6 @@
 import XCTest
 
 import AEXML
-import Alamofire
 @testable import SwiftOverpass
 
 class OverpassRelation_AEXMLElementTestCase: XCTestCase {
@@ -20,13 +19,13 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(relation.id, "2674373")
+        XCTAssertEqual(relation.id, 2674373)
         
         let firstWayMember = OverpassRelation.Member(type: .way,
-                                                     id: "363580156",
+                                                     id: 363580156,
                                                      role: "outer")
         let secondWayMember = OverpassRelation.Member(type: .way,
-                                                      id: "142678633",
+                                                      id: 142678633,
                                                       role: "outer")
         
         XCTAssertEqual(relation.members, [firstWayMember, secondWayMember])
@@ -46,7 +45,7 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
         // The file contains two types, but the first of them has a bogus type that the parser
         // will not be able to recognize. It should just skip that member and continue parsing,
         // resulting in one member.
-        let way = OverpassRelation.Member(type: .way, id: "142678633", role: "outer")
+        let way = OverpassRelation.Member(type: .way, id: 142678633, role: "outer")
         XCTAssertEqual(relation.members, [way])
     }
     
@@ -56,7 +55,7 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertTrue(relation.members?.isEmpty ?? true)
+        XCTAssertTrue(relation.members.isEmpty)
     }
     
     func testInitWithSingleRelationWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
@@ -85,10 +84,7 @@ class OverpassRelation_AEXMLElementTestCase: XCTestCase {
             return nil
         }
         
-        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
-                                        requestQuery: "")
-        
-        return OverpassRelation(xmlElement: xmlElement, response: response)
+        return OverpassRelation(xmlElement: xmlElement)
     }
     
 }

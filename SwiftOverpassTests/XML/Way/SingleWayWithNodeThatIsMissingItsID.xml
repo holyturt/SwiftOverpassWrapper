@@ -1,0 +1,6 @@
+<way id="587898625">
+    <!-- The first node is missing the `ref` attribute. -->
+    <nd/>
+    <nd ref="292831592"/>
+    <tag k="highway" v="secondary"/>
+</way>

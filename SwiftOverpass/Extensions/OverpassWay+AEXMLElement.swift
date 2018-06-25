@@ -16,22 +16,34 @@ extension OverpassWay {
     ///
     /// - Parameters:
     ///   - xmlElement: The XML element to create the way from.
-    ///   - response: Overpass response object that can be used to lookup related features.
-    convenience init?(xmlElement: AEXMLElement, response: OverpassResponse) {
+    ///   - responseElementProvider: An object that is used to look up related elements
+    ///                              that were received with the same response.
+    convenience init?(xmlElement: AEXMLElement, responseElementProvider: OverpassResponseElementsProviding? = nil) {
         
-        // Basic entity properties
-        guard let id = OverpassEntity.parseEntityId(from: xmlElement) else {
+        // Basic element properties
+        guard let id = OverpassElement.parseId(from: xmlElement) else {
             return nil
         }
-        let tags = OverpassEntity.parseTags(from: xmlElement)
-        let meta = OverpassEntity.parseMeta(from: xmlElement)
-        
-        var nodeIds: [String]?
-        if let nodes = xmlElement["nd"].all {
-            nodeIds = nodes.map { $0.attributes["ref"]! }
+        let tags = OverpassElement.parseTags(from: xmlElement)
+        let meta = OverpassElement.parseMeta(from: xmlElement)
+
+        let nodeIds: [Int]
+        if let nodeXMLElements = xmlElement["nd"].all {
+            nodeIds = nodeXMLElements.compactMap { singleNodeXMLElement in
+                guard
+                    let idAsString = singleNodeXMLElement.attributes["ref"],
+                    let id = Int(idAsString)
+                else {
+                    return nil
+                }
+                
+                return id
+            }
+        } else {
+            nodeIds = []
         }
         
-        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, response: response)
+        self.init(id: id, tags: tags, meta: meta, nodeIds: nodeIds, responseElementProvider: responseElementProvider)
     }
     
 }

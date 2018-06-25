@@ -8,32 +8,40 @@
 
 import Foundation
 
-public final class OverpassRelation: OverpassEntity {
+/// An OpenStreetMap element that consists of one or more tags and also an ordered list of one or more nodes,
+/// ways and/or relations as members which is used to define logical or geographic relationships between other elements.
+/// See: https://wiki.openstreetmap.org/wiki/Relation
+public final class OverpassRelation: OverpassElement {
     
     // MARK: - Constants
     
     /// Represents a <member> element
     public struct Member: Equatable {
         let type: OverpassQueryType
-        let id: String
+        let id: Int
         let role: String?
     }
     
     // MARK: - Properties
     
-    /// The response which made the relation
-    public fileprivate(set) weak var response: OverpassResponse?
     /// List of member the relation has
-    public let members: [Member]?
+    public let members: [Member]
+    
+    /// An object that is used to look up related elements that were received with the same response.
+    private weak var responseElementProvider: OverpassResponseElementsProviding?
     
     // MARK: - Initializers
     
     /**
      Creates a `OverpassRelation`
     */
-    internal init(id: String, tags: [String : String], meta: Meta?, members: [Member]?, response: OverpassResponse) {
+    internal init(id: Int,
+                  tags: [String : String],
+                  meta: Meta?,
+                  members: [Member] = [],
+                  responseElementProvider: OverpassResponseElementsProviding?) {
         self.members = members
-        self.response = response
+        self.responseElementProvider = responseElementProvider
         
         super.init(id: id, tags: tags, meta: meta)
     }
@@ -44,7 +52,7 @@ public final class OverpassRelation: OverpassEntity {
      Returns nodes that related to the relation after load from response
      */
     public func loadRelatedNodes() -> [OverpassNode]? {
-        if let response = response, let allNodes = response.nodes, let members = members {
+        if let allNodes = responseElementProvider?.nodes {
             let nodeIds = members.filter { $0.type == .node }
                 .map { $0.id }
             
@@ -69,7 +77,7 @@ public final class OverpassRelation: OverpassEntity {
      Return ways that related to the relation after load from response
     */
     public func loadRelatedWays() -> [OverpassWay]? {
-        if let response = response, let allWays = response.ways, let members = members {
+        if let allWays = responseElementProvider?.ways {
             let wayIds = members.filter { $0.type == .way }
                 .map { $0.id }
             
@@ -94,7 +102,7 @@ public final class OverpassRelation: OverpassEntity {
      Return another relations that related to the relation after load from response
     */
     public func loadRelatedRelations() -> [OverpassRelation]? {
-        if let response = response, let allRels = response.relations, let members = members {
+        if let allRels = responseElementProvider?.relations {
             let relIds = members.filter { $0.type == .relation }
                 .map { $0.id }
             
