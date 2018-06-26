@@ -9,7 +9,6 @@
 import XCTest
 
 import AEXML
-import Alamofire
 @testable import SwiftOverpass
 
 class OverpassWay_AEXMLElementTestCase: XCTestCase {
@@ -20,11 +19,20 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
             return
         }
         
-        XCTAssertEqual(way.id, "587898625")
+        XCTAssertEqual(way.id, 587898625)
         XCTAssertEqual(way.tags["highway"], "secondary")
         
-        let expectedNodeIds = ["292831593", "292831592"]
+        let expectedNodeIds = [292831593, 292831592]
         XCTAssertEqual(way.nodeIds, expectedNodeIds)
+    }
+    
+    func testInitWithXMLElementShouldIgnoreNodesThatAreLackingAnID() {
+        guard let way = singleWayFromXMLFile("SingleWayWithNodeThatIsMissingItsID") else {
+            XCTFail("The XML should properly initialize the model.")
+            return
+        }
+        
+        XCTAssertEqual(way.nodeIds, [292831592])
     }
     
     func testInitWithSingleWayWithMetaPropertiesShouldParseTheMetaPropertiesCorrectly() {
@@ -53,10 +61,7 @@ class OverpassWay_AEXMLElementTestCase: XCTestCase {
             return nil
         }
         
-        let response = OverpassResponse(response: DataResponse<String>(request: nil, response: nil, data: Data(), result: Result<String>.success("")),
-                                        requestQuery: "")
-        
-        return OverpassWay(xmlElement: xmlElement, response: response)
+        return OverpassWay(xmlElement: xmlElement)
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  OverpassEntity.swift
+//  OverpassElement.swift
 //  SwiftOverpass
 //
 //  Created by Wolfgang Timme on 5/16/18.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class OverpassEntity {
+/// The basic components of OpenStreetMap's conceptual data model of the physical world.
+/// See: https://wiki.openstreetmap.org/wiki/Elements
+public class OverpassElement {
     
     public struct Meta {
         public let version: Int
@@ -18,15 +20,15 @@ public class OverpassEntity {
         public let username: String
     }
 
-    /// The id of the entity
-    public let id: String
+    /// The id of the element
+    public let id: Int
     
-    /// List of tag the entity has
+    /// List of tag the element has
     public let tags: [String: String]
     
     public let meta: Meta?
     
-    public init(id: String, tags: [String: String], meta: Meta? = nil) {
+    public init(id: Int, tags: [String: String], meta: Meta? = nil) {
         self.id = id
         self.tags = tags
         self.meta = meta

@@ -10,16 +10,22 @@ import Foundation
 import Alamofire
 import AEXML
 
-public final class OverpassResponse {
+/// Provides the elements that were received with an response.
+public protocol OverpassResponseElementsProviding: class {
+    /// All node elements that came with the response.
+    var nodes: [OverpassNode]? { get }
+    
+    /// All way elements that came with the response.
+    var ways: [OverpassWay]? { get }
+    
+    /// All relation elements that came with the response.
+    var relations: [OverpassRelation]? { get }
+}
+
+public final class OverpassResponse: OverpassResponseElementsProviding {
     
     // MARK: - Properties
     
-    /// List of output nodes
-    public fileprivate(set) var nodes: [OverpassNode]?
-    /// List of output ways
-    public fileprivate(set) var ways: [OverpassWay]?
-    /// List of output relations
-    public fileprivate(set) var relations: [OverpassRelation]?
     /// The request query which was used to fetch from api
     public let requestQuery: String
     /// The xml string of output
@@ -40,25 +46,31 @@ public final class OverpassResponse {
             // Parses xml to create `OverpassNode`
             if let nodes = xmlDoc.root["node"].all {
                 self.nodes = nodes.compactMap { nodeXMLElement in
-                    return OverpassNode(xmlElement: nodeXMLElement, response: self)
+                    return OverpassNode(xmlElement: nodeXMLElement, responseElementProvider: self)
                 }
             }
             
             // Parses xml to create `OverpassWay`
             if let ways = xmlDoc.root["way"].all {
                 self.ways = ways.compactMap { wayXMLElement in
-                    return OverpassWay(xmlElement: wayXMLElement, response: self)
+                    return OverpassWay(xmlElement: wayXMLElement, responseElementProvider: self)
                 }
             }
             
             // Parses xml to create `OverpassRelation`
             if let rels = xmlDoc.root["relation"].all {
                 self.relations = rels.compactMap { relationXMLElement in
-                    return OverpassRelation(xmlElement: relationXMLElement, response: self)
+                    return OverpassRelation(xmlElement: relationXMLElement, responseElementProvider: self)
                 }
             }
         } catch {
             print("\(error)")
         }
     }
+    
+    // MARK: OverpassResponseElementsProviding
+    
+    public private(set) var nodes: [OverpassNode]?
+    public private(set) var ways: [OverpassWay]?
+    public private(set) var relations: [OverpassRelation]?
 }
