@@ -7,4 +7,20 @@
 //
 
 import Foundation
-import AEXML
+
+/**
+ Class for creating relation query
+ */
+public final class RelationQuery: OverpassQuery, NodeReferable, WayReferable {
+    
+    // MARK: OverpassQuery
+    
+    public var type: OverpassQueryType = .relation
+    public private(set) weak var parent: OverpassQuery?
+    public var tags: [String : OverpassTag] = [:]
+    public var boundingBox: BoudingBox?
+    
+    public init(parent: OverpassQuery? = nil) {
+        self.parent = parent
+    }
+}
