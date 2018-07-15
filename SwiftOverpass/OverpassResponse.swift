@@ -33,14 +33,11 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
     
     // MARK: Initializers
     
-    /**
-     Creates a `OverpassResponse`
-    */
-    internal init(response: DataResponse<String>, requestQuery: String) {
+    public init(xml: String, requestQuery: String) {
+        self.xml = xml
         self.requestQuery = requestQuery
         
         do {
-            self.xml = String(data: response.data!, encoding: String.Encoding.utf8)!
             let xmlDoc = try AEXMLDocument(xml: self.xml)
             
             // Parses xml to create `OverpassNode`
@@ -66,6 +63,15 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
         } catch {
             print("\(error)")
         }
+    }
+    
+    /**
+     Creates a `OverpassResponse`
+    */
+    internal convenience init(response: DataResponse<String>, requestQuery: String) {
+        let xml = String(data: response.data!, encoding: String.Encoding.utf8)!
+        
+        self.init(xml: xml, requestQuery: requestQuery)
     }
     
     // MARK: OverpassResponseElementsProviding
