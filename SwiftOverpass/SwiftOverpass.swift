@@ -64,7 +64,7 @@ public final class OverpassApi {
     
     // MARK: - Closures
     
-    public typealias CompletionClosure = (OverpassResponse, Error?) -> Void
+    public typealias CompletionClosure = (OverpassResponse?, Error?) -> Void
     
     // MARK: - Constants
     
@@ -156,7 +156,30 @@ public final class OverpassApi {
         ]
         
         Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseString { (response) in
-            completion(OverpassResponse(response: response, requestQuery: requestQuery.xml), nil)
+            
+            guard nil == response.error else {
+                completion(nil, response.error)
+                return
+            }
+            
+            guard
+                let data = response.data,
+                let xmlString = String(data: data, encoding: String.Encoding.utf8)
+            else {
+                // This should not happen. If the server did not response with an error, we should at least have String data.
+                assertionFailure("Unable to read XML string from response data.")
+                
+                completion(nil, nil)
+                return
+            }
+            
+            do {
+                let resultingResponse = try OverpassResponse(xml: xmlString, requestQuery: requestQuery.xml)
+                
+                completion(resultingResponse, nil)
+            } catch {
+                completion(nil, error)
+            }
         }
     }
     

@@ -19,7 +19,17 @@ class ViewController: UIViewController {
         query.hasTag("name", equals: "Schloss Neuschwanstein")
         
         SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
-            .fetch([query]) { (response) in
+            .fetch([query]) { (response, error) in
+                guard nil == error else {
+                    print("\(error!)")
+                    return
+                }
+                
+                guard let response = response else {
+                    print("Failed to process the response.")
+                    return
+                }
+                
                 print(response.requestQuery)
                 print(response.xml)
         }

@@ -33,45 +33,41 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
     
     // MARK: Initializers
     
-    public init(xml: String, requestQuery: String) {
+    public init(xml: String, requestQuery: String) throws {
         self.xml = xml
         self.requestQuery = requestQuery
         
-        do {
-            let xmlDoc = try AEXMLDocument(xml: self.xml)
-            
-            // Parses xml to create `OverpassNode`
-            if let nodes = xmlDoc.root["node"].all {
-                self.nodes = nodes.compactMap { nodeXMLElement in
-                    return OverpassNode(xmlElement: nodeXMLElement, responseElementProvider: self)
-                }
+        let xmlDoc = try AEXMLDocument(xml: self.xml)
+        
+        // Parses xml to create `OverpassNode`
+        if let nodes = xmlDoc.root["node"].all {
+            self.nodes = nodes.compactMap { nodeXMLElement in
+                return OverpassNode(xmlElement: nodeXMLElement, responseElementProvider: self)
             }
-            
-            // Parses xml to create `OverpassWay`
-            if let ways = xmlDoc.root["way"].all {
-                self.ways = ways.compactMap { wayXMLElement in
-                    return OverpassWay(xmlElement: wayXMLElement, responseElementProvider: self)
-                }
+        }
+        
+        // Parses xml to create `OverpassWay`
+        if let ways = xmlDoc.root["way"].all {
+            self.ways = ways.compactMap { wayXMLElement in
+                return OverpassWay(xmlElement: wayXMLElement, responseElementProvider: self)
             }
-            
-            // Parses xml to create `OverpassRelation`
-            if let rels = xmlDoc.root["relation"].all {
-                self.relations = rels.compactMap { relationXMLElement in
-                    return OverpassRelation(xmlElement: relationXMLElement, responseElementProvider: self)
-                }
+        }
+        
+        // Parses xml to create `OverpassRelation`
+        if let rels = xmlDoc.root["relation"].all {
+            self.relations = rels.compactMap { relationXMLElement in
+                return OverpassRelation(xmlElement: relationXMLElement, responseElementProvider: self)
             }
-        } catch {
-            print("\(error)")
         }
     }
     
     /**
      Creates a `OverpassResponse`
     */
-    internal convenience init(response: DataResponse<String>, requestQuery: String) {
+    internal convenience init(response: DataResponse<String>, requestQuery: String) throws {
         let xml = String(data: response.data!, encoding: String.Encoding.utf8)!
         
-        self.init(xml: xml, requestQuery: requestQuery)
+        try self.init(xml: xml, requestQuery: requestQuery)
     }
     
     // MARK: OverpassResponseElementsProviding
