@@ -64,7 +64,7 @@ public final class OverpassApi {
     
     // MARK: - Closures
     
-    public typealias CompletionClosure = (OverpassResponse) -> Void
+    public typealias CompletionClosure = (OverpassResponse, Error?) -> Void
     
     // MARK: - Constants
     
@@ -156,7 +156,7 @@ public final class OverpassApi {
         ]
         
         Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseString { (response) in
-            completion(OverpassResponse(response: response, requestQuery: requestQuery.xml))
+            completion(OverpassResponse(response: response, requestQuery: requestQuery.xml), nil)
         }
     }
     
