@@ -12,6 +12,8 @@ import SwiftOverpass
 
 class OverpassResponseTestCase: XCTestCase {
     
+    // MARK: Response from Overpass
+    
     func testInitWithXMLStringOfOverpassResponseShouldParseTheXML() {
         let xmlString = stringFromXMLFile("ShortenedResponseFromOverpass")
         let requestQuery = "some query"
@@ -34,6 +36,8 @@ class OverpassResponseTestCase: XCTestCase {
             XCTFail("Failed to create response: \(error)")
         }
     }
+    
+    // MARK: Response from OpenStreetMap API
     
     func testInitWithXMLStringOfOpenStreetMapAPIResponseShouldParseTheXML() {
         let xmlString = stringFromXMLFile("ShortenedResponseFromOpenStreetMapAPI")
