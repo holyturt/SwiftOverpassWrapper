@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.55.4 3079d8ea">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2018-07-17T22:25:02Z"/>
+
+  <relation id="124410">
+    <member type="way" ref="138705978" role="outer"/>
+    <member type="way" ref="138705977" role="outer"/>
+    <member type="way" ref="4245350" role="outer"/>
+    <member type="way" ref="136190596" role="outer"/>
+    <member type="way" ref="136190591" role="inner"/>
+    <member type="way" ref="136190578" role="inner"/>
+    <member type="way" ref="136190595" role="inner"/>
+    <member type="way" ref="136190592" role="inner"/>
+    <member type="way" ref="130471681" role="inner"/>
+    <tag k="access" v="yes"/>
+    <tag k="area" v="yes"/>
+    <tag k="bicycle" v="yes"/>
+    <tag k="foot" v="yes"/>
+    <tag k="highway" v="pedestrian"/>
+    <tag k="lit" v="yes"/>
+    <tag k="motor_vehicle" v="no"/>
+    <tag k="name" v="Piazza del Colosseo"/>
+    <tag k="name:ko" v="콜로세움 광장"/>
+    <tag k="name:ru" v="Площадь Колизея"/>
+    <tag k="surface" v="cobblestone"/>
+    <tag k="type" v="multipolygon"/>
+    <tag k="wikidata" v="Q3902395"/>
+    <tag k="wikipedia" v="it:Piazza del Colosseo"/>
+  </relation>
+  <way id="107305183">
+    <nd ref="247701983"/>
+    <nd ref="1510786621"/>
+    <nd ref="1233586607"/>
+    <nd ref="1510786571"/>
+    <nd ref="247702000"/>
+    <nd ref="1510786549"/>
+    <nd ref="247701951"/>
+    <nd ref="1510786622"/>
+    <nd ref="247702001"/>
+    <nd ref="257915754"/>
+    <nd ref="3448355440"/>
+    <nd ref="1189805790"/>
+    <nd ref="247701892"/>
+  </way>
+  <node id="266318045" lat="41.8913648" lon="12.4916085">
+  <tag k="bicycle:conditional" v="yes @ Mo-Th 20:00-23:30; Fr 20:00-24:00; Sa 00:00-01:30, 05:30-24:00; Su 00:00-01:30, 05:30-23:30; PH 05:30-24:00"/>
+  <tag k="name" v="Colosseo"/>
+  <tag k="network" v="Metropolitana di Roma"/>
+  <tag k="note" v="folding bikes always allowed, electric bikes with lead batteries not allowed"/>
+  <tag k="railway" v="subway_entrance"/>
+  <tag k="wheelchair" v="yes"/>
+  <tag k="wikidata" v="Q1229235"/>
+  <tag k="wikipedia" v="it:Colosseo (metropolitana di Roma)"/>
+</node>
+
+</osm>
