@@ -12,6 +12,16 @@ import SwiftOverpass
 
 class OverpassResponseTestCase: XCTestCase {
     
+    func testInitWithMalformedStringsShouldThrowAnError() {
+        let requestQuery = "some query"
+        
+        XCTAssertThrowsError(try OverpassResponse(xml: "",
+                                                  requestQuery: requestQuery))
+        
+        XCTAssertThrowsError(try OverpassResponse(xml: "This is not valid XML",
+                                                  requestQuery: requestQuery))
+    }
+    
     // MARK: Response from Overpass
     
     func testInitWithXMLStringOfOverpassResponseShouldParseTheXML() {
