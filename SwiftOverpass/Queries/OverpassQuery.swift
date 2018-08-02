@@ -40,26 +40,6 @@ public protocol OverpassQuery: class {
 }
 
 extension OverpassQuery {
-    /**
-     Sets a bbox to retrieve from specific location
-     
-     - parameter bbox: A bouding box to set
-     */
-    public func setBoudingBox(_ bbox: BoudingBox) {
-        boundingBox = bbox
-    }
-    
-    /**
-     Sets a bbox to retrieve from specific location
-     
-     - parameter s: Lowest latitude
-     - parameter n: Lowest longitude
-     - parameter w: Highest latitude
-     - parameter e: Highest longitude
-     */
-    public func setBoudingBox(s: Double, n: Double, w: Double, e: Double) {
-        boundingBox = BoudingBox(s: s, n: n, w: w, e: e)
-    }
     
     /**
      Sets a tag to the query
