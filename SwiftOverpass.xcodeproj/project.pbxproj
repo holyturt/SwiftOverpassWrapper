@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EEFF31FE0091E008AAB56 /* UpQuery.swift */; };
+		382CA9A720E23A1C007D7496 /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA9A620E23A1C007D7496 /* QueryBuilder.swift */; };
+		382CA9AB20E23DB1007D7496 /* NodeReferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA9AA20E23DB1007D7496 /* NodeReferable.swift */; };
+		382CA9AD20E23DC1007D7496 /* WayReferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA9AC20E23DC1007D7496 /* WayReferable.swift */; };
+		382CA9AF20E23DD1007D7496 /* RelationReferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA9AE20E23DD1007D7496 /* RelationReferable.swift */; };
+		38D4801720E24796007BD521 /* XMLQueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D4801620E24796007BD521 /* XMLQueryBuilder.swift */; };
 		38F2AE431FD3B15E00BC1D27 /* SwiftOverpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */; };
 		38F2AE4A1FD3B15E00BC1D27 /* SwiftOverpass.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38F2AE541FD3B40300BC1D27 /* AEXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2AE551FD3B40300BC1D27 /* AEXML.framework */; };
@@ -22,7 +26,6 @@
 		38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */; };
 		38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */; };
 		38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */; };
-		38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF111FD41A2800BC1D27 /* DownQuery.swift */; };
 		38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */; };
 		6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */; };
 		6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */; };
@@ -64,8 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		382CA9A620E23A1C007D7496 /* QueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryBuilder.swift; sourceTree = "<group>"; };
+		382CA9AA20E23DB1007D7496 /* NodeReferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeReferable.swift; sourceTree = "<group>"; };
+		382CA9AC20E23DC1007D7496 /* WayReferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayReferable.swift; sourceTree = "<group>"; };
+		382CA9AE20E23DD1007D7496 /* RelationReferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationReferable.swift; sourceTree = "<group>"; };
 		387EEFED1FE00869008AAB56 /* SwiftOverpassDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftOverpassDemo.xcodeproj; path = SwiftOverpassDemo/SwiftOverpassDemo.xcodeproj; sourceTree = "<group>"; };
-		387EEFF31FE0091E008AAB56 /* UpQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpQuery.swift; sourceTree = "<group>"; };
+		38D4801620E24796007BD521 /* XMLQueryBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLQueryBuilder.swift; sourceTree = "<group>"; };
 		38F2AE391FD3B15E00BC1D27 /* SwiftOverpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOverpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOverpass.h; sourceTree = "<group>"; };
 		38F2AE3D1FD3B15E00BC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +91,6 @@
 		38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponse.swift; sourceTree = "<group>"; };
 		38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode.swift; sourceTree = "<group>"; };
 		38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassWay.swift; sourceTree = "<group>"; };
-		38F2AF111FD41A2800BC1D27 /* DownQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownQuery.swift; sourceTree = "<group>"; };
 		38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
 		6408D77620D3184100829A3A /* SingleRelation.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelation.xml; sourceTree = "<group>"; };
 		6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassRelation+AEXMLElement.swift"; sourceTree = "<group>"; };
@@ -129,6 +135,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		382CA9B020E23F68007D7496 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				382CA9B120E23F96007D7496 /* Mixins */,
+				38F2AEA81FD3CDEA00BC1D27 /* OverpassQuery.swift */,
+				38F2AEAB1FD3CF1300BC1D27 /* NodeQuery.swift */,
+				38F2AEAD1FD3CF2800BC1D27 /* WayQuery.swift */,
+				38F2AEAF1FD3CF3E00BC1D27 /* RelationQuery.swift */,
+				382CA9A620E23A1C007D7496 /* QueryBuilder.swift */,
+				38D4801620E24796007BD521 /* XMLQueryBuilder.swift */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		382CA9B120E23F96007D7496 /* Mixins */ = {
+			isa = PBXGroup;
+			children = (
+				382CA9AA20E23DB1007D7496 /* NodeReferable.swift */,
+				382CA9AC20E23DC1007D7496 /* WayReferable.swift */,
+				382CA9AE20E23DD1007D7496 /* RelationReferable.swift */,
+			);
+			path = Mixins;
+			sourceTree = "<group>";
+		};
 		387EEFEE1FE00869008AAB56 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,17 +189,12 @@
 		38F2AE3B1FD3B15E00BC1D27 /* SwiftOverpass */ = {
 			isa = PBXGroup;
 			children = (
+				382CA9B020E23F68007D7496 /* Queries */,
 				64BDA7C720DD9C66004C47A7 /* Elements */,
 				6441AC50209A6ED000B03F3E /* Extensions */,
 				38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */,
 				38F2AE3D1FD3B15E00BC1D27 /* Info.plist */,
 				38F2AEA21FD3CD6100BC1D27 /* SwiftOverpass.swift */,
-				38F2AEA81FD3CDEA00BC1D27 /* OverpassQuery.swift */,
-				38F2AEAB1FD3CF1300BC1D27 /* NodeQuery.swift */,
-				38F2AEAD1FD3CF2800BC1D27 /* WayQuery.swift */,
-				38F2AEAF1FD3CF3E00BC1D27 /* RelationQuery.swift */,
-				387EEFF31FE0091E008AAB56 /* UpQuery.swift */,
-				38F2AF111FD41A2800BC1D27 /* DownQuery.swift */,
 				38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */,
 				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				38F2AEA61FD3CDAA00BC1D27 /* BoudingBox.swift */,
@@ -433,16 +458,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				382CA9A720E23A1C007D7496 /* QueryBuilder.swift in Sources */,
 				643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */,
+				382CA9AD20E23DC1007D7496 /* WayReferable.swift in Sources */,
+				382CA9AF20E23DD1007D7496 /* RelationReferable.swift in Sources */,
 				6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */,
-				387EEFF41FE0091E008AAB56 /* UpQuery.swift in Sources */,
 				38F2AEA31FD3CD6100BC1D27 /* SwiftOverpass.swift in Sources */,
 				38F2AEA71FD3CDAA00BC1D27 /* BoudingBox.swift in Sources */,
 				38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */,
 				38F2AEAE1FD3CF2800BC1D27 /* WayQuery.swift in Sources */,
 				38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */,
 				38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */,
+				382CA9AB20E23DB1007D7496 /* NodeReferable.swift in Sources */,
 				38F2AEB01FD3CF3E00BC1D27 /* RelationQuery.swift in Sources */,
+				38D4801720E24796007BD521 /* XMLQueryBuilder.swift in Sources */,
 				643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */,
 				38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */,
 				38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */,
