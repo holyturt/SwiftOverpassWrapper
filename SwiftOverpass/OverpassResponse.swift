@@ -22,6 +22,10 @@ public protocol OverpassResponseElementsProviding: class {
     var relations: [OverpassRelation]? { get }
 }
 
+public enum OverpassResponseError: Error {
+    case parsingFailed(query: String, xml: String, underlyingError: Error)
+}
+
 public final class OverpassResponse: OverpassResponseElementsProviding {
     
     // MARK: - Properties
@@ -37,7 +41,14 @@ public final class OverpassResponse: OverpassResponseElementsProviding {
         self.xml = xml
         self.requestQuery = requestQuery
         
-        let xmlDoc = try AEXMLDocument(xml: self.xml)
+        let xmlDoc: AEXMLDocument
+        do {
+            xmlDoc = try AEXMLDocument(xml: self.xml)
+        } catch {
+            throw OverpassResponseError.parsingFailed(query: requestQuery,
+                                                      xml: xml,
+                                                      underlyingError: error)
+        }
         
         // Parses xml to create `OverpassNode`
         if let nodes = xmlDoc.root["node"].all {

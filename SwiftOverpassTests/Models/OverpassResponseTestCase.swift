@@ -12,14 +12,32 @@ import SwiftOverpass
 
 class OverpassResponseTestCase: XCTestCase {
     
+    // MARK: Propagating errors
+    
     func testInitWithMalformedStringsShouldThrowAnError() {
+        let xml = "This is not valid XML"
         let requestQuery = "some query"
         
-        XCTAssertThrowsError(try OverpassResponse(xml: "",
-                                                  requestQuery: requestQuery))
-        
-        XCTAssertThrowsError(try OverpassResponse(xml: "This is not valid XML",
-                                                  requestQuery: requestQuery))
+        XCTAssertThrowsError(try OverpassResponse(xml: xml, requestQuery: requestQuery)) { (error) -> Void in
+            
+            guard let responseError = error as? OverpassResponseError else {
+                XCTFail("The parser should've thrown a specific error.")
+                return
+            }
+            
+            if case OverpassResponseError.parsingFailed(let queryFromError,
+                                                        let xmlFromError,
+                                                        let underlyingError) = responseError {
+                XCTAssertEqual(queryFromError, requestQuery)
+                XCTAssertEqual(xmlFromError, xml)
+                
+                let underlyingParserError = underlyingError as NSError
+                XCTAssertEqual(underlyingParserError.domain, XMLParser.errorDomain)
+                XCTAssertEqual(underlyingParserError.code, XMLParser.ErrorCode.emptyDocumentError.rawValue)
+            } else {
+                XCTFail("Unexpected error.")
+            }
+        }
     }
     
     // MARK: Response from Overpass
