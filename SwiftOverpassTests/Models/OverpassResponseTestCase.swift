@@ -58,8 +58,6 @@ class OverpassResponseTestCase: XCTestCase {
             
             XCTAssertEqual(response.relations?.count, 1)
             XCTAssertEqual(response.relations?.first?.id, 124410)
-            
-            XCTAssertEqual(response.requestQuery, requestQuery)
         } catch {
             XCTFail("Failed to create response: \(error)")
         }
@@ -83,8 +81,6 @@ class OverpassResponseTestCase: XCTestCase {
             
             XCTAssertEqual(response.relations?.count, 1)
             XCTAssertEqual(response.relations?.first?.id, 1978434)
-            
-            XCTAssertEqual(response.requestQuery, requestQuery)
         } catch {
             XCTFail("Failed to create response: \(error)")
         }

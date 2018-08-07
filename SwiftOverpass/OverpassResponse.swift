@@ -28,22 +28,13 @@ public enum OverpassResponseError: Error {
 
 public final class OverpassResponse: OverpassResponseElementsProviding {
     
-    // MARK: - Properties
-    
-    /// The request query which was used to fetch from api
-    public let requestQuery: String
-    /// The xml string of output
-    public let xml: String
-    
     // MARK: Initializers
     
     public init(xml: String, requestQuery: String) throws {
-        self.xml = xml
-        self.requestQuery = requestQuery
         
         let xmlDoc: AEXMLDocument
         do {
-            xmlDoc = try AEXMLDocument(xml: self.xml)
+            xmlDoc = try AEXMLDocument(xml: xml)
         } catch {
             throw OverpassResponseError.parsingFailed(query: requestQuery,
                                                       xml: xml,
