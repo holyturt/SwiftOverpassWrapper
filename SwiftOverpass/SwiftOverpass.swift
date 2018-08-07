@@ -15,36 +15,6 @@ import Alamofire
  */
 public final class SwiftOverpass: NSObject {
     
-    /// Represents types of <query> element
-    public enum OverpassIndependentQueryType {
-        case
-        /// Specifies the query is node
-        node,
-        /// Specifies the query is way
-        way,
-        /// Specifies the query is relation
-        relation
-        
-        // TODO: Implement `map` query
-        // ,map(BoudingBox)
-    }
-    
-    /**
-     Makes a query by `OverpassIndependentQueryType`
-     
-     - parameter type: The type of the query
-    */
-    public static func query(type: OverpassIndependentQueryType) -> OverpassQuery {
-        switch type {
-        case .node:
-            return NodeQuery()
-        case .way:
-            return WayQuery()
-        case .relation:
-            return RelationQuery()
-        }
-    }
-    
     /**
      Creates a `OverpassApi`
      
@@ -148,8 +118,9 @@ public final class OverpassApi {
      - parameter completion: A completion handler.
      */
     public func fetch(_ queries: [OverpassQuery], verbosity: OutputVerbosity? = nil, order: OutputOrder? = nil, completion: @escaping CompletionClosure) {
-        let requestQuery = makeXmlDocumentForRequestBody(queries: queries, verbosity: verbosity, order: order)
-        let parameters: [String : String] = ["data" : requestQuery.xmlCompact]
+        let builder = XMLQueryBuilder(queries: queries, verbosity: verbosity, order: order, timeout: timeout, elementLimit: elementLimit)
+        
+        let parameters: [String : String] = ["data" : builder.makeQuery()]
         
         let headers: HTTPHeaders = [
             "Content-Type" : "application/x-www-form-urlencoded; charset=UTF-8"
@@ -174,7 +145,7 @@ public final class OverpassApi {
             }
             
             do {
-                let resultingResponse = try OverpassResponse(xml: xmlString, requestQuery: requestQuery.xml)
+                let resultingResponse = try OverpassResponse(xml: xmlString, requestQuery: builder.makeQuery())
                 
                 completion(resultingResponse, nil)
             } catch {
@@ -195,36 +166,4 @@ public final class OverpassApi {
         fetch([query], verbosity: verbosity, order: order, completion: completion)
     }
     
-    // MARK: - Private
-    
-    private func makeXmlDocumentForRequestBody(queries: [OverpassQuery], verbosity: OutputVerbosity?, order: OutputOrder?) -> AEXMLDocument {
-        let xmlDoc = AEXMLDocument()
-        
-        // Sets attributes to <osm-script> element
-        var osmAttributes = [String : String]()
-        if let timeout = timeout {
-            osmAttributes["timeout"] = "\(timeout)"
-        }
-        if let elementLimit = elementLimit {
-            osmAttributes["element-limit"] = "\(elementLimit)"
-        }
-        let osmScript = xmlDoc.addChild(name: "osm-script", attributes: osmAttributes)
-        
-        // Adds <query> elements to main document
-        queries.forEach {
-            osmScript.addChildren($0.makeXmlDocument().children)
-        }
-        
-        // Finally, put <print> element to make output
-        var printAttributes = [String : String]()
-        if let verbosity = verbosity {
-            printAttributes["mode"] = verbosity.stringValue
-        }
-        if let order = order, order == .qt {
-            printAttributes["order"] = order.stringValue
-        }
-        osmScript.addChild(name: "print", attributes: printAttributes)
-        
-        return xmlDoc
-    }
 }
