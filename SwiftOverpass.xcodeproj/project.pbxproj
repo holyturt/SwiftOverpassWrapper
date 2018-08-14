@@ -200,7 +200,6 @@
 				38F2AE3D1FD3B15E00BC1D27 /* Info.plist */,
 				38F2AEA21FD3CD6100BC1D27 /* SwiftOverpass.swift */,
 				38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */,
-				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				38F2AEA61FD3CDAA00BC1D27 /* BoudingBox.swift */,
 			);
 			path = SwiftOverpass;
@@ -311,6 +310,7 @@
 		6481863D21238B1900808873 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				6481863E21238B1900808873 /* Elements */,
 			);
 			path = Models;
