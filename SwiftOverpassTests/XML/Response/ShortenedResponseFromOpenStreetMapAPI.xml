@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.6.0 (6019 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+	<bounds minlat="52.3460223" minlon="11.388895" maxlat="52.249441" maxlon="5.44519410"/>
+	<node id="378292" visible="true" version="2" changeset="234532" timestamp="2012-03-21T13:54:22Z" user="johndoe" uid="43" lat="52.2372629" lon="5.3092809">
+		<tag k="amenity" v="post_box"/>
+		<tag k="collection_times" v="Mo-Fr 17:45; Sa 11:00"/>
+		<tag k="collection_times:lastcheck" v="2013-02-11"/>
+		<tag k="count" v="2"/>
+	</node>
+	<way id="524734" visible="true" version="2" changeset="14507464" timestamp="2002-04-19T15:01:11Z" user="fl2an" uid="561267">
+		<nd ref="104793986"/>
+		<nd ref="173304839"/>
+		<tag k="foot" v="yes"/>
+		<tag k="highway" v="footway"/>
+	</way>
+	<relation id="1978434" visible="true" version="12598" changeset="63553437" timestamp="2012-01-02T20:38:22Z" user="BAd3mjo" uid="200724">
+		<member type="way" ref="4291811" role=""/>
+		<member type="way" ref="4081261" role=""/>
+		<member type="way" ref="3515028" role=""/>
+		<member type="way" ref="20391598" role=""/>
+	</relation>
+</osm>

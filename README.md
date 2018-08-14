@@ -15,9 +15,9 @@ Let's say this is an Overpass XML collects nodes which have the key "name" that 
 ```
 can be written like:
 ```swift
-#import SwiftOverpass
+import SwiftOverpass
 
-let query = SwiftOverpass.query(type: .node)
+let query = NodeQuery()
 query.setBoudingBox(s: 50.7, n: 50.8, w: 7.1, e: 7.25)
 query.hasTag("name", equals: "Gielgen")
 
@@ -41,9 +41,9 @@ Overpass XML:
 
 Swift:
 ```swift
-let nodeQuery = SwiftOverpass.query(type: .node)
+let nodeQuery = NodeQuery()
 nodeQuery.hasTag("name", equals: "Schloss Neuschwanstein")
-let relationQuery = nodeQuery.related(.relation)
+let relationQuery = nodeQuery.relation()
 
 SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
   .fetch([nodeQuery, relationQuery]) { (response) in

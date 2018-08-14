@@ -27,6 +27,9 @@
 		6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */; };
 		6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */; };
 		6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6408D77620D3184100829A3A /* SingleRelation.xml */; };
+		6434049F20FEA186004C79D5 /* OverpassResponseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6434049E20FEA186004C79D5 /* OverpassResponseTestCase.swift */; };
+		643404A820FEA6A3004C79D5 /* ShortenedResponseFromOpenStreetMapAPI.xml in Resources */ = {isa = PBXBuildFile; fileRef = 643404A620FEA6A3004C79D5 /* ShortenedResponseFromOpenStreetMapAPI.xml */; };
+		643404A920FEA6A3004C79D5 /* ShortenedResponseFromOverpass.xml in Resources */ = {isa = PBXBuildFile; fileRef = 643404A720FEA6A3004C79D5 /* ShortenedResponseFromOverpass.xml */; };
 		643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */; };
 		643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */ = {isa = PBXBuildFile; fileRef = 643DB71620ACE53F001A7B95 /* SingleWay.xml */; };
 		643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */; };
@@ -94,6 +97,9 @@
 		6408D77620D3184100829A3A /* SingleRelation.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelation.xml; sourceTree = "<group>"; };
 		6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassRelation+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
+		6434049E20FEA186004C79D5 /* OverpassResponseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponseTestCase.swift; sourceTree = "<group>"; };
+		643404A620FEA6A3004C79D5 /* ShortenedResponseFromOpenStreetMapAPI.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ShortenedResponseFromOpenStreetMapAPI.xml; sourceTree = "<group>"; };
+		643404A720FEA6A3004C79D5 /* ShortenedResponseFromOverpass.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ShortenedResponseFromOverpass.xml; sourceTree = "<group>"; };
 		643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassEntity+AEXMLElement.swift"; sourceTree = "<group>"; };
 		643DB71620ACE53F001A7B95 /* SingleWay.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWay.xml; sourceTree = "<group>"; };
 		643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassWay+AEXMLElement.swift"; sourceTree = "<group>"; };
@@ -259,6 +265,15 @@
 			path = Node;
 			sourceTree = "<group>";
 		};
+		643404A120FEA482004C79D5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				643404A620FEA6A3004C79D5 /* ShortenedResponseFromOpenStreetMapAPI.xml */,
+				643404A720FEA6A3004C79D5 /* ShortenedResponseFromOverpass.xml */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		643DB71D20ACE772001A7B95 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +285,7 @@
 		6441AC4B209A6D8B00B03F3E /* XML */ = {
 			isa = PBXGroup;
 			children = (
+				643404A120FEA482004C79D5 /* Response */,
 				6419CEF220D99F61006E57BC /* Node */,
 				6419CEF120D99F49006E57BC /* Relation */,
 				6419CEEF20D99F39006E57BC /* Way */,
@@ -303,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				64570077207552AA0061A81D /* OverpassTagTestCase.swift */,
+				6434049E20FEA186004C79D5 /* OverpassResponseTestCase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -455,12 +472,14 @@
 			files = (
 				6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */,
 				64732EAB20D6745F00B5646E /* SingleWayWithMetaProperties.xml in Resources */,
+				643404A920FEA6A3004C79D5 /* ShortenedResponseFromOverpass.xml in Resources */,
 				6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */,
 				6441AC4E209A6DAF00B03F3E /* SingleNode.xml in Resources */,
 				643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */,
 				64BDA7CA20DDA3CF004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml in Resources */,
 				6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */,
 				6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */,
+				643404A820FEA6A3004C79D5 /* ShortenedResponseFromOpenStreetMapAPI.xml in Resources */,
 				64732EA920D6734600B5646E /* SingleRelationWithMetaProperties.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +526,7 @@
 				643DB71F20ACE79F001A7B95 /* XCTestCase+XMLFromFile.swift in Sources */,
 				6441AC56209A707E00B03F3E /* OverpassNode_AEXMLElementTestCase.swift in Sources */,
 				6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */,
+				6434049F20FEA186004C79D5 /* OverpassResponseTestCase.swift in Sources */,
 				64BDA7CD20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
