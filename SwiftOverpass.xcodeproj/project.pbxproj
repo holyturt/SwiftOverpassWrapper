@@ -24,13 +24,9 @@
 		38F2AEAE1FD3CF2800BC1D27 /* WayQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AEAD1FD3CF2800BC1D27 /* WayQuery.swift */; };
 		38F2AEB01FD3CF3E00BC1D27 /* RelationQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AEAF1FD3CF3E00BC1D27 /* RelationQuery.swift */; };
 		38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */; };
-		38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */; };
-		38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */; };
-		38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */; };
 		6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */; };
 		6408D77B20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */; };
 		6408D77C20D31AB000829A3A /* SingleRelation.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6408D77620D3184100829A3A /* SingleRelation.xml */; };
-		643DB70B20ACD986001A7B95 /* OverpassElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70A20ACD986001A7B95 /* OverpassElement.swift */; };
 		643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */; };
 		643DB71720ACE53F001A7B95 /* SingleWay.xml in Resources */ = {isa = PBXBuildFile; fileRef = 643DB71620ACE53F001A7B95 /* SingleWay.xml */; };
 		643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */; };
@@ -42,7 +38,11 @@
 		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
 		64732EA920D6734600B5646E /* SingleRelationWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */; };
 		64732EAB20D6745F00B5646E /* SingleWayWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */; };
-		6481863B212385A800808873 /* OverpassResponseElementsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */; };
+		6481864421238B1900808873 /* OverpassWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481863F21238B1900808873 /* OverpassWay.swift */; };
+		6481864521238B1900808873 /* OverpassElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864021238B1900808873 /* OverpassElement.swift */; };
+		6481864621238B1900808873 /* OverpassNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864121238B1900808873 /* OverpassNode.swift */; };
+		6481864721238B1900808873 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864221238B1900808873 /* OverpassRelation.swift */; };
+		6481864821238B1900808873 /* OverpassResponseElementsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864321238B1900808873 /* OverpassResponseElementsProviding.swift */; };
 		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
 		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
@@ -90,13 +90,9 @@
 		38F2AEAD1FD3CF2800BC1D27 /* WayQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WayQuery.swift; sourceTree = "<group>"; };
 		38F2AEAF1FD3CF3E00BC1D27 /* RelationQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationQuery.swift; sourceTree = "<group>"; };
 		38F2AF0B1FD407CE00BC1D27 /* OverpassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponse.swift; sourceTree = "<group>"; };
-		38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassNode.swift; sourceTree = "<group>"; };
-		38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassWay.swift; sourceTree = "<group>"; };
-		38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
 		6408D77620D3184100829A3A /* SingleRelation.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelation.xml; sourceTree = "<group>"; };
 		6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassRelation+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6408D77A20D3190000829A3A /* OverpassRelation_AEXMLElementTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassRelation_AEXMLElementTestCase.swift; sourceTree = "<group>"; };
-		643DB70A20ACD986001A7B95 /* OverpassElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassElement.swift; sourceTree = "<group>"; };
 		643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassEntity+AEXMLElement.swift"; sourceTree = "<group>"; };
 		643DB71620ACE53F001A7B95 /* SingleWay.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWay.xml; sourceTree = "<group>"; };
 		643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassWay+AEXMLElement.swift"; sourceTree = "<group>"; };
@@ -108,7 +104,11 @@
 		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
 		64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMetaProperties.xml; sourceTree = "<group>"; };
 		64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWayWithMetaProperties.xml; sourceTree = "<group>"; };
-		6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementsProviding.swift; sourceTree = "<group>"; };
+		6481863F21238B1900808873 /* OverpassWay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassWay.swift; sourceTree = "<group>"; };
+		6481864021238B1900808873 /* OverpassElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassElement.swift; sourceTree = "<group>"; };
+		6481864121238B1900808873 /* OverpassNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassNode.swift; sourceTree = "<group>"; };
+		6481864221238B1900808873 /* OverpassRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
+		6481864321238B1900808873 /* OverpassResponseElementsProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementsProviding.swift; sourceTree = "<group>"; };
 		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
 		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 		38F2AE3B1FD3B15E00BC1D27 /* SwiftOverpass */ = {
 			isa = PBXGroup;
 			children = (
+				6481863D21238B1900808873 /* Models */,
 				382CA9B020E23F68007D7496 /* Queries */,
-				64BDA7C720DD9C66004C47A7 /* Elements */,
 				6441AC50209A6ED000B03F3E /* Extensions */,
 				38F2AE3C1FD3B15E00BC1D27 /* SwiftOverpass.h */,
 				38F2AE3D1FD3B15E00BC1D27 /* Info.plist */,
@@ -305,14 +305,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		64BDA7C720DD9C66004C47A7 /* Elements */ = {
+		6481863D21238B1900808873 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				643DB70A20ACD986001A7B95 /* OverpassElement.swift */,
-				38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */,
-				38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */,
-				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
-				6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */,
+				6481863E21238B1900808873 /* Elements */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6481863E21238B1900808873 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				6481863F21238B1900808873 /* OverpassWay.swift */,
+				6481864021238B1900808873 /* OverpassElement.swift */,
+				6481864121238B1900808873 /* OverpassNode.swift */,
+				6481864221238B1900808873 /* OverpassRelation.swift */,
+				6481864321238B1900808873 /* OverpassResponseElementsProviding.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -464,23 +472,22 @@
 				382CA9A720E23A1C007D7496 /* QueryBuilder.swift in Sources */,
 				643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */,
 				382CA9AD20E23DC1007D7496 /* WayReferable.swift in Sources */,
-				6481863B212385A800808873 /* OverpassResponseElementsProviding.swift in Sources */,
+				6481864821238B1900808873 /* OverpassResponseElementsProviding.swift in Sources */,
 				382CA9AF20E23DD1007D7496 /* RelationReferable.swift in Sources */,
 				6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */,
 				38F2AEA31FD3CD6100BC1D27 /* SwiftOverpass.swift in Sources */,
+				6481864421238B1900808873 /* OverpassWay.swift in Sources */,
 				38F2AEA71FD3CDAA00BC1D27 /* BoudingBox.swift in Sources */,
-				38F2AF141FD421AA00BC1D27 /* OverpassRelation.swift in Sources */,
 				38F2AEAE1FD3CF2800BC1D27 /* WayQuery.swift in Sources */,
-				38F2AF0E1FD407F100BC1D27 /* OverpassNode.swift in Sources */,
+				6481864521238B1900808873 /* OverpassElement.swift in Sources */,
 				38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */,
 				382CA9AB20E23DB1007D7496 /* NodeReferable.swift in Sources */,
 				38F2AEB01FD3CF3E00BC1D27 /* RelationQuery.swift in Sources */,
 				38D4801720E24796007BD521 /* XMLQueryBuilder.swift in Sources */,
+				6481864621238B1900808873 /* OverpassNode.swift in Sources */,
 				643DB70F20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift in Sources */,
-				38F2AF101FD408D900BC1D27 /* OverpassWay.swift in Sources */,
-				38F2AF121FD41A2800BC1D27 /* DownQuery.swift in Sources */,
-				643DB70B20ACD986001A7B95 /* OverpassElement.swift in Sources */,
 				38F2AEA91FD3CDEA00BC1D27 /* OverpassQuery.swift in Sources */,
+				6481864721238B1900808873 /* OverpassRelation.swift in Sources */,
 				38F2AEAC1FD3CF1300BC1D27 /* NodeQuery.swift in Sources */,
 				38F2AEA51FD3CD9E00BC1D27 /* OverpassTag.swift in Sources */,
 				6441AC54209A700B00B03F3E /* OverpassNode+AEXMLElement.swift in Sources */,
