@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AEXML
 
 // Represents types of queries.
 public enum OverpassQueryType {
