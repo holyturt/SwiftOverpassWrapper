@@ -35,7 +35,7 @@ public final class OverpassRelation: OverpassElement {
     /**
      Creates a `OverpassRelation`
     */
-    internal init(id: Int,
+    public init(id: Int,
                   tags: [String : String],
                   meta: Meta?,
                   members: [Member] = [],

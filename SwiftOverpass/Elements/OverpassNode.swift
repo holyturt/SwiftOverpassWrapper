@@ -27,12 +27,12 @@ public final class OverpassNode: OverpassElement {
     /**
      Creates a `OverpassNode`
     */
-    internal init(id: Int,
-                  tags: [String : String],
-                  meta: Meta?,
-                  lat: Double,
-                  lon: Double,
-                  responseElementProvider: OverpassResponseElementsProviding?) {
+    public init(id: Int,
+                tags: [String : String],
+                meta: Meta?,
+                lat: Double,
+                lon: Double,
+                responseElementProvider: OverpassResponseElementsProviding?) {
         
         self.latitude = lat
         self.longitude = lon

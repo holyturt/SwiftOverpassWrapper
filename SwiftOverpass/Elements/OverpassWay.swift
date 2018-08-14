@@ -25,7 +25,7 @@ public final class OverpassWay: OverpassElement {
     /**
      Creates a `OverpassWay`
     */
-    internal init(id: Int,
+    public init(id: Int,
                   tags: [String : String],
                   meta: Meta?,
                   nodeIds: [Int] = [],
