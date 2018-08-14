@@ -42,6 +42,7 @@
 		64570078207552AA0061A81D /* OverpassTagTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64570077207552AA0061A81D /* OverpassTagTestCase.swift */; };
 		64732EA920D6734600B5646E /* SingleRelationWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */; };
 		64732EAB20D6745F00B5646E /* SingleWayWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */; };
+		6481863B212385A800808873 /* OverpassResponseElementsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */; };
 		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
 		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
@@ -107,6 +108,7 @@
 		64570077207552AA0061A81D /* OverpassTagTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassTagTestCase.swift; sourceTree = "<group>"; };
 		64732EA720D6732700B5646E /* SingleRelationWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMetaProperties.xml; sourceTree = "<group>"; };
 		64732EAA20D6745000B5646E /* SingleWayWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWayWithMetaProperties.xml; sourceTree = "<group>"; };
+		6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementsProviding.swift; sourceTree = "<group>"; };
 		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
 		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				38F2AF0D1FD407F100BC1D27 /* OverpassNode.swift */,
 				38F2AF0F1FD408D900BC1D27 /* OverpassWay.swift */,
 				38F2AF131FD421AA00BC1D27 /* OverpassRelation.swift */,
+				6481863A212385A800808873 /* OverpassResponseElementsProviding.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				382CA9A720E23A1C007D7496 /* QueryBuilder.swift in Sources */,
 				643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */,
 				382CA9AD20E23DC1007D7496 /* WayReferable.swift in Sources */,
+				6481863B212385A800808873 /* OverpassResponseElementsProviding.swift in Sources */,
 				382CA9AF20E23DD1007D7496 /* RelationReferable.swift in Sources */,
 				6408D77920D3189200829A3A /* OverpassRelation+AEXMLElement.swift in Sources */,
 				38F2AEA31FD3CD6100BC1D27 /* SwiftOverpass.swift in Sources */,
