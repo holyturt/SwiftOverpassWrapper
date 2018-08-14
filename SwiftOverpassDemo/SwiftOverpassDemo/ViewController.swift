@@ -20,7 +20,17 @@ class ViewController: UIViewController {
         let rel = node.relation()
         
         SwiftOverpass.api(endpoint: "http://overpass-api.de/api/interpreter")
-            .fetch([node, rel]) { (response) in
+            .fetch([node, rel]) { (response, error) in
+                guard nil == error else {
+                    print("\(error!)")
+                    return
+                }
+                
+                guard let response = response else {
+                    print("Failed to process the response.")
+                    return
+                }
+                
                 print(response.requestQuery)
                 print(response.xml)
         }
