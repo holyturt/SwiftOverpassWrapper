@@ -43,6 +43,7 @@
 		6481864621238B1900808873 /* OverpassNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864121238B1900808873 /* OverpassNode.swift */; };
 		6481864721238B1900808873 /* OverpassRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864221238B1900808873 /* OverpassRelation.swift */; };
 		6481864821238B1900808873 /* OverpassResponseElementsProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864321238B1900808873 /* OverpassResponseElementsProviding.swift */; };
+		6481864A21238C1F00808873 /* OverpassTag+AEXMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481864921238C1F00808873 /* OverpassTag+AEXMLElement.swift */; };
 		6484AD9020D4695A00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */; };
 		6484AD9220D46D7D00AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */; };
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
@@ -109,6 +110,7 @@
 		6481864121238B1900808873 /* OverpassNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassNode.swift; sourceTree = "<group>"; };
 		6481864221238B1900808873 /* OverpassRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassRelation.swift; sourceTree = "<group>"; };
 		6481864321238B1900808873 /* OverpassResponseElementsProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementsProviding.swift; sourceTree = "<group>"; };
+		6481864921238C1F00808873 /* OverpassTag+AEXMLElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OverpassTag+AEXMLElement.swift"; sourceTree = "<group>"; };
 		6484AD8E20D4676B00AD2EAC /* SingleRelationWithMemberOfUnexpectedType.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberOfUnexpectedType.xml; sourceTree = "<group>"; };
 		6484AD9120D46CD100AD2EAC /* SingleRelationWithMemberThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleRelationWithMemberThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				643DB70E20ACDCBD001A7B95 /* OverpassEntity+AEXMLElement.swift */,
 				6408D77820D3189200829A3A /* OverpassRelation+AEXMLElement.swift */,
 				643DB71920ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift */,
+				6481864921238C1F00808873 /* OverpassTag+AEXMLElement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6481864A21238C1F00808873 /* OverpassTag+AEXMLElement.swift in Sources */,
 				382CA9A720E23A1C007D7496 /* QueryBuilder.swift in Sources */,
 				643DB71A20ACE5A4001A7B95 /* OverpassWay+AEXMLElement.swift in Sources */,
 				382CA9AD20E23DC1007D7496 /* WayReferable.swift in Sources */,
