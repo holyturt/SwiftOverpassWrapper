@@ -20,14 +20,15 @@ public enum OverpassQueryType {
     
     /// The string to creat a XML line.
     public var stringValue: String {
-        return OverpassQueryType.stringMapping[self]!
+        switch self {
+        case .node:
+            return "node"
+        case .way:
+            return "way"
+        case .relation:
+            return "relation"
+        }
     }
-    
-    fileprivate static let stringMapping = [
-        node: "node",
-        way: "way",
-        relation: "relation"
-    ]
 }
 
 /**
