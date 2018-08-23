@@ -329,9 +329,9 @@
 		6481863D21238B1900808873 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				6481863E21238B1900808873 /* Elements */,
 				64D58DBC212E3BAA00105780 /* OverpassElementType.swift */,
+				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
