@@ -15,7 +15,7 @@ public final class WayQuery: OverpassQuery, NodeReferable, RelationReferable {
     
     // MARK: OverpassQuery
     
-    public var type: OverpassQueryType = .way
+    public var type: ElementType = .way
     public private(set) weak var parent: OverpassQuery?
     public var tags: [String : OverpassTag] = [:]
     public var boundingBox: BoudingBox?

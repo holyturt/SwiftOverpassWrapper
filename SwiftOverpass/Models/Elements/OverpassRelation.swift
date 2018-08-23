@@ -17,7 +17,7 @@ public final class OverpassRelation: OverpassElement {
     
     /// Represents a <member> element
     public struct Member: Equatable {
-        let type: OverpassQueryType
+        let type: ElementType
         let id: Int
         let role: String?
     }

@@ -8,31 +8,10 @@
 
 import Foundation
 
-// Represents types of queries.
-public enum OverpassQueryType {
-    /// Specifies the query is node
-    case node
-    /// Specifies the query is way
-    case way
-    /// Specifies the query is relation
-    case relation
-    
-    /// The string to creat a XML line.
-    public var stringValue: String {
-        return OverpassQueryType.stringMapping[self]!
-    }
-    
-    fileprivate static let stringMapping = [
-        node: "node",
-        way: "way",
-        relation: "relation"
-    ]
-}
-
 /**
 */
 public protocol OverpassQuery: class {
-    var type: OverpassQueryType { get }
+    var type: ElementType { get }
     var parent: OverpassQuery? { get }
     var tags: [String: OverpassTag] { get set }
     var boundingBox: BoudingBox? { get set }

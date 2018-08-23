@@ -68,7 +68,7 @@ public final class XMLQueryBuilder: QueryBuilder {
     }
     
     private func makeQueryElement(_ query: OverpassQuery) -> AEXMLElement {
-        let element = AEXMLElement(name: "query", attributes: ["type": query.type.stringValue])
+        let element = AEXMLElement(name: "query", attributes: ["type": query.type.rawValue])
         
         // Add <has-kv> elements to <query> element as children
         element.addChildren(query.tags.map { makeHasKvElement($0.value) })
@@ -95,7 +95,7 @@ public final class XMLQueryBuilder: QueryBuilder {
     }
     
     private func makeRecurseElement(_ query: OverpassQuery, parent: OverpassQuery) -> AEXMLElement {
-        let relationType = "\(parent.type.stringValue)-\(query.type.stringValue)"
+        let relationType = "\(parent.type.rawValue)-\(query.type.rawValue)"
         return AEXMLElement(name: "recurse", attributes: ["type" : relationType])
     }
     

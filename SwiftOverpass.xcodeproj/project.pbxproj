@@ -52,6 +52,7 @@
 		6484AD9620D474F500AD2EAC /* SingleNodeWithMetaProperties.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */; };
 		64BDA7CA20DDA3CF004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */; };
 		64BDA7CD20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BDA7CC20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift */; };
+		64D58DBD212E3BAA00105780 /* OverpassElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D58DBC212E3BAA00105780 /* OverpassElementType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		6484AD9320D4707800AD2EAC /* SingleNodeWithMetaProperties.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleNodeWithMetaProperties.xml; sourceTree = "<group>"; };
 		64BDA7C920DDA30C004C47A7 /* SingleWayWithNodeThatIsMissingItsID.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SingleWayWithNodeThatIsMissingItsID.xml; sourceTree = "<group>"; };
 		64BDA7CC20DDAF3F004C47A7 /* OverpassResponseElementProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassResponseElementProviderMock.swift; sourceTree = "<group>"; };
+		64D58DBC212E3BAA00105780 /* OverpassElementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverpassElementType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			children = (
 				38F2AEA41FD3CD9E00BC1D27 /* OverpassTag.swift */,
 				6481863E21238B1900808873 /* Elements */,
+				64D58DBC212E3BAA00105780 /* OverpassElementType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				6481864421238B1900808873 /* OverpassWay.swift in Sources */,
 				38F2AEA71FD3CDAA00BC1D27 /* BoudingBox.swift in Sources */,
 				38F2AEAE1FD3CF2800BC1D27 /* WayQuery.swift in Sources */,
+				64D58DBD212E3BAA00105780 /* OverpassElementType.swift in Sources */,
 				6481864521238B1900808873 /* OverpassElement.swift in Sources */,
 				38F2AF0C1FD407CE00BC1D27 /* OverpassResponse.swift in Sources */,
 				382CA9AB20E23DB1007D7496 /* NodeReferable.swift in Sources */,
