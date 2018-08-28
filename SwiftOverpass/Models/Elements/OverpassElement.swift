@@ -18,6 +18,14 @@ public class OverpassElement {
         public let timestamp: String
         public let userId: Int
         public let username: String
+        
+        public init(version: Int, changesetId: Int, timestamp: String, userId: Int, username: String) {
+            self.version = version
+            self.changesetId = changesetId
+            self.timestamp = timestamp
+            self.userId = userId
+            self.username = username
+        }
     }
 
     /// The id of the element

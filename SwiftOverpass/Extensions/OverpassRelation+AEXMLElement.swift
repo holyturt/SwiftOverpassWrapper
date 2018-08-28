@@ -29,16 +29,10 @@ extension OverpassRelation {
         
         let members: [OverpassRelation.Member]
         if let memberXMLElements = xmlElement["member"].all {
-            
-            // A mapping of the XML attribute "type" to the cases of `OverpassQueryType`
-            let typeAttributeToTypeEnum: [String: OverpassQueryType] = ["node": .node,
-                                                                        "way": .way,
-                                                                        "relation": .relation]
-            
             members = memberXMLElements.compactMap {
                 guard
                     let typeAttribute = $0.attributes["type"],
-                    let type = typeAttributeToTypeEnum[typeAttribute]
+                    let type = ElementType(rawValue: typeAttribute)
                 else {
                     // The member is of an unexpected type; ignore it.
                     return nil

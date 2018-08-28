@@ -7,34 +7,11 @@
 //
 
 import Foundation
-import AEXML
-
-// Represents types of queries.
-public enum OverpassQueryType {
-    /// Specifies the query is node
-    case node
-    /// Specifies the query is way
-    case way
-    /// Specifies the query is relation
-    case relation
-    
-    /// The string to creat a XML line.
-    public var stringValue: String {
-        switch self {
-        case .node:
-            return "node"
-        case .way:
-            return "way"
-        case .relation:
-            return "relation"
-        }
-    }
-}
 
 /**
 */
 public protocol OverpassQuery: class {
-    var type: OverpassQueryType { get }
+    var type: ElementType { get }
     var parent: OverpassQuery? { get }
     var tags: [String: OverpassTag] { get set }
     var boundingBox: BoudingBox? { get set }
